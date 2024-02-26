@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.test01.reported_article;
+package org.thisdote.communityfordevelopers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
