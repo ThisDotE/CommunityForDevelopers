@@ -16,11 +16,11 @@ public class UserTest {
 
     @DisplayName("User Test")
     @Test
-    void testFindAllUsers() {
+    void testFindAllUser() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<UserDTO> us =userService.selectAllUser();
-                    menus.forEach(System.out::println);
+                    List<UserDTO> users =userService.selectAllUser();
+                    users.forEach(System.out::println);
                 }
         );
     }

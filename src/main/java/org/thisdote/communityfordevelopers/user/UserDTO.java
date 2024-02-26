@@ -5,7 +5,7 @@ import java.util.Date;
 public class UserDTO {
     private int userCode;
     private String userId;
-    private String userPwd;
+    private String userPassword;
     private Date userBirthday;
     private String userPhone;
     private String userEmail;
@@ -17,10 +17,10 @@ public class UserDTO {
     public UserDTO() {
     }
 
-    public UserDTO(int userCode, String userId, String userPwd, Date userBirthday, String userPhone, String userEmail, int userStudygroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade) {
+    public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudygroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade) {
         this.userCode = userCode;
         this.userId = userId;
-        this.userPwd = userPwd;
+        this.userPassword = userPassword;
         this.userBirthday = userBirthday;
         this.userPhone = userPhone;
         this.userEmail = userEmail;
@@ -36,8 +36,8 @@ public class UserDTO {
     public String getUserId() {
         return userId;
     }
-    public String getUserPwd() {
-        return userPwd;
+    public String getUserPassword() {
+        return userPassword;
     }
     public Date getUserBirthday() {
         return userBirthday;
@@ -66,7 +66,7 @@ public class UserDTO {
         return "UserDTO{" +
                 "userCode=" + userCode +
                 ", userId='" + userId + '\'' +
-                ", userPwd='" + userPwd + '\'' +
+                ", userPassword='" + userPassword + '\'' +
                 ", userBirthday=" + userBirthday +
                 ", userPhone='" + userPhone + '\'' +
                 ", userEmail='" + userEmail + '\'' +
