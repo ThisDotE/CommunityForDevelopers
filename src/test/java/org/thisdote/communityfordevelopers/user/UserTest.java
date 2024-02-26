@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.reported_article.ReportedArticleDTO;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class UserTest {
     void testFindAllUsers() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<UserDTO> menus = userService.selectAllUser();
+                    List<UserDTO> us =userService.selectAllUser();
                     menus.forEach(System.out::println);
                 }
         );
