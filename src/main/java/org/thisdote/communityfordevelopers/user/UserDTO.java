@@ -16,7 +16,7 @@ public class UserDTO {
 
     public UserDTO() {
     }
-
+  
     public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudygroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade) {
         this.userCode = userCode;
         this.userId = userId;
