@@ -1,7 +1,4 @@
 package org.thisdote.communityfordevelopers.inquiry;
 
-import org.apache.ibatis.annotations.Mapper;
-
-
 public interface InquiryMapper {
 }
