@@ -13,7 +13,7 @@ public class StudygroupMemberTest {
     @Autowired
     private StudygroupMemberService studygroupMemberService;
 
-    @DisplayName("Reported Reply Test")
+    @DisplayName("Reported Member Test")
     @Test
     void findAllStudygroupMemberTest() {
         Assertions.assertDoesNotThrow(
