@@ -16,7 +16,7 @@
         <result property="userGrade" column="USER_GRADE"/>
     </resultMap>
 
-    <select id="selectAllUser" resultMap="UserResultMap">
+    <select id="selectAllUser" resultMap="userResultMap">
         SELECT
         A.USER_CODE
         , A.USER_ID
