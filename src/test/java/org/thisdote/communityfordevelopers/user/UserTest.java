@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.reported_article;
+package org.thisdote.communityfordevelopers.user;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -8,19 +8,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-
 @SpringBootTest
-public class ReportedArticleTest {
+public class UserTest {
     @Autowired
-    private ReportedArticleService reportedArticleService;
+    private UserService userService;
 
-    @DisplayName("Reported Article Test")
+    @DisplayName("User Test")
     @Test
-    void testFindAllMenus() {
+    void testFindAllUser() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<ReportedArticleDTO> menus = reportedArticleService.selectAllReportedArticle();
-                    menus.forEach(System.out::println);
+                    List<UserDTO> users =userService.selectAllUser();
+                    users.forEach(System.out::println);
                 }
         );
     }
