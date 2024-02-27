@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.reported_article;
+package org.thisdote.communityfordevelopers.blacklist;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -8,18 +8,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-
 @SpringBootTest
-public class ReportedArticleTest {
-    @Autowired
-    private ReportedArticleService reportedArticleService;
+public class BlackListTest {
 
-    @DisplayName("Reported Article Test")
+    @Autowired
+    private BlackListService blackListService;
+
+    @DisplayName("BlackList Test")
     @Test
-    void testFindAllMenus() {
+    void testFindBlackList() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<ReportedArticleDTO> menus = reportedArticleService.selectAllReportedArticle();
+                    List<BlackListDTO> menus = blackListService.selectAllBlackList();
                     menus.forEach(System.out::println);
                 }
         );
