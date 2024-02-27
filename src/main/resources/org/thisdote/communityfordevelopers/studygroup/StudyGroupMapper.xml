@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.thisdote.communityfordevelopers.studygroup.StudyGroupMapper">
+    <resultMap id="studyGroupResultMap" type="org.thisdote.communityfordevelopers.studygroup.StudyGroupDTO">
+        <id property="studyGroupId" column="studygroup_id"/>
+        <result property="studyGroupType" column="studygroup_type"/>
+        <result property="studyGroupCreatedDate" column="studygroup_create_date"/>
+        <result property="studyGroupMemberCount" column="studygroup_member_count"/>
+        <result property="studyGroupActivationStatus" column="studygroup_activation_status"/>
+        <result property="studyGroupStudyTime" column="studygroup_study_time"/>
+        <result property="studyGroupContent" column="studygroup_content"/>
+    </resultMap>
+    
+    <select id="selectAllStudyGroup" resultMap="studyGroupResultMap">
+        SELECT
+               A.studygroup_id
+             , A.studygroup_type
+             , A.studygroup_create_date
+             , A.studygroup_member_count
+             , A.studygroup_activation_status
+             , A.studygroup_study_time
+             , A.studygroup_content
+          FROM studygroup A;
+    </select>
+</mapper>
