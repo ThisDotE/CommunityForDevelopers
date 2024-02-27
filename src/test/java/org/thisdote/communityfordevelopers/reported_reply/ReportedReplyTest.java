@@ -15,11 +15,11 @@ public class ReportedReplyTest {
 
     @DisplayName("Reported Reply Test")
     @Test
-    void testFindAllMenus() {
+    void testFindAllReportedReplies() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<ReportedReplyDTO> menus = reportedReplyService.selectAllReportedReply();
-                    menus.forEach(System.out::println);
+                    List<ReportedReplyDTO> reportedreplies = reportedReplyService.selectAllReportedReply();
+                    reportedreplies.forEach(System.out::println);
                 }
         );
     }
