@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.thisdote.communityfordevelopers.inquiry.InquiryMapper">
+
+    <resultMap id="inquiryResultMap" type="org.thisdote.communityfordevelopers.inquiry.InquiryDTO">
+        <id property="inquiryId" column="INQUIRY_ID"/>
+        <result property="inquiryCategory" column="INQUIRY_CATEGORY"/>
+        <result property="inquiryTitle" column="INQUIRY_TITLE"/>
+        <result property="inquiryContent" column="INQUIRY_CONTENT"/>
+        <result property="inquiryCreateDate" column="INQUIRY_CREATE_DATE"/>
+        <result property="inquiryLastUpdateDate" column="INQUIRY_LAST_UPDATE_DATE"/>
+        <result property="inquiryStatus" column="INQUIRY_STATUS"/>
+        <result property="userCode" column="USER_CODE"/>
+    </resultMap>
+
+    <select id="selectAllInquiry" resultMap="inquiryResultMap">
+        SELECT
+               A.INQUIRY_ID
+             , A.INQUIRY_CATEGORY
+             , A.INQUIRY_TITLE
+             , A.INQUIRY_CONTENT
+             , A.INQUIRY_CREATE_DATE
+             , A.INQUIRY_LAST_UPDATE_DATE
+             , A.INQUIRY_STATUS
+             , A.USER_CODE
+          FROM INQUIRY A
+    </select>
+</mapper>
