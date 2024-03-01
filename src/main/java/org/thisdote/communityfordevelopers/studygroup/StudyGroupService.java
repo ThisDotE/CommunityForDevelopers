@@ -16,7 +16,7 @@ public class StudyGroupService {
         this.sqlSession = sqlSession;
     }
 
-    public List<StudyGroupDTO> findAllStudyGroup() {
+    List<StudyGroupDTO> findAllStudyGroup() {
         return sqlSession.getMapper(StudyGroupMapper.class).selectAllStudyGroup();
     }
 }
