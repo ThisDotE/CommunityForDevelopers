@@ -45,4 +45,19 @@
              , STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
     </select>
+    <select id="selectAllQuestionArticle" resultMap="articleResultMap">
+        SELECT
+        ARTICLE_ID
+        , ARTICLE_TITLE
+        , USER_CODE
+        , ARTICLE_CATEGORY
+        , ARTICLE_CONTENT
+        , ARTICLE_LIKE_COUNT
+        , ARTICLE_REPLY_COUNT
+        , ARTICLE_VIEW_COUNT
+        , ARTICLE_CREATE_DATE
+        , ARTICLE_QUESTION_CATEGORY
+        FROM ARTICLE
+        WHERE ARTICLE_CATEGORY = '질문';
+    </select>
 </mapper>

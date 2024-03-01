@@ -18,4 +18,8 @@ public class ArticleService {
     public List<ArticleDTO> selectAllArticle() {
         return sqlSession.getMapper(ArticleMapper.class).selectAllArticle();
     }
+
+    public List<ArticleDTO> selectAllQuestionArticle() {
+        return sqlSession.getMapper(ArticleMapper.class).selectAllQuestionArticle();
+    }
 }

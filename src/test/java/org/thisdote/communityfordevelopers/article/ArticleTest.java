@@ -24,4 +24,14 @@ public class ArticleTest {
                 }
         );
     }
+    @DisplayName("Question Article Test")
+    @Test
+    void TestFindAllQuestionArticle() {
+        Assertions.assertDoesNotThrow(
+                () -> {
+                    List<ArticleDTO> articles = articleService.selectAllQuestionArticle();
+                    articles.forEach(System.out::println);
+                }
+        );
+    }
 }
