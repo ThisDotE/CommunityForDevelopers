@@ -33,10 +33,6 @@ public class ArticleService {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByCategory(category);
     }
 
-    public List<ArticleDTO> selectTitleArticle(String title){return  sqlSession.getMapper(ArticleMapper.class).selectTitleArticle(title);}
-
-    public List<ArticleDTO> selectCategoryArticle(String category){return sqlSession.getMapper(ArticleMapper.class).selectCategoryArticle(category);}
-
     public List<ArticleDTO> selectStudyArticleInfo(int articleId) {return sqlSession.getMapper(ArticleMapper.class).selectStudyArticleInfo(articleId);}
 
     public List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria) {

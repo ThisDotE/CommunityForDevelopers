@@ -34,44 +34,6 @@ public class ArticleTest {
         );
     }
 
-    /* 설명. Title이 같은 게시글 제목 출력 */
-    @DisplayName("Title Test")
-    @ParameterizedTest
-    @ValueSource(strings = "점심에 밥 같이 드실분 구한다니깐~.")
-    void TestselectTitleArticle(String title){
-        Assertions.assertDoesNotThrow(
-                () -> {
-                    List<ArticleDTO> articles = articleService.selectTitleArticle(title);
-                    for (int i = 0; i < articles.size(); i++) {
-                        if(title.equals(articles.get(i).getArticleTitle())){
-                            System.out.println(articles.get(i).getArticleTitle());
-                            return;
-                        }
-                    }
-                }
-        );
-    }
-
-    @DisplayName("Category Test")
-    @ParameterizedTest
-    @ValueSource(strings = "질문")
-    void TestselectCategoryArticle(String category){
-        Assertions.assertDoesNotThrow(
-                () -> {
-                    List<ArticleDTO> articles = articleService.selectCategoryArticle(category);
-                    for (int i = 0; i < articles.size(); i++) {
-                        if(category.equals(articles.get(i).getArticleCategory())){
-                            System.out.println(articles.get(i).getArticleCategory());
-                            System.out.println("질문 게시글 입니다.");
-                            return;
-                        }
-                    }
-                }
-        );
-    }
-
-
-
     @DisplayName("회원 별 작성 게시글 조회")
     @ParameterizedTest
     @ValueSource(ints = 1)
@@ -92,7 +54,7 @@ public class ArticleTest {
         });
     }
 
-    @DisplayName("스터디 그룹 조회")
+    @DisplayName("스터디 그룹 게시글 조회")
     @ParameterizedTest
     @ValueSource(ints = 1)
     void testFindStudyGroupByArticleId(int articleId) {
