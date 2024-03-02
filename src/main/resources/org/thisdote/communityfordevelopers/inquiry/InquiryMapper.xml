@@ -27,4 +27,18 @@
              , A.USER_CODE
           FROM INQUIRY A
     </select>
+
+    <select id="selectInquiryBy" resultMap="inquiryResultMap" parameterType="_int">
+        SELECT
+               A.INQUIRY_ID
+             , A.INQUIRY_CATEGORY
+             , A.INQUIRY_TITLE
+             , A.INQUIRY_CONTENT
+             , A.INQUIRY_CREATE_DATE
+             , A.INQUIRY_LAST_UPDATE_DATE
+             , A.INQUIRY_STATUS
+             , A.USER_CODE
+          FROM INQUIRY A
+         WHERE USER_CODE = #{userCode}
+    </select>
 </mapper>

@@ -20,4 +20,8 @@ public class InquiryService {
         return sqlSession.getMapper(InquiryMapper.class).selectAllInquiry();
     }
 
+    public List<InquiryDTO> selectInquiryBy(int userCode) {
+        return sqlSession.getMapper(InquiryMapper.class).selectInquiryBy(userCode);
+    }
+
 }
