@@ -72,6 +72,16 @@ public class ArticleTest {
         });
     }
 
+    @DisplayName("스터디 그룹 게시글 조회")
+    @ParameterizedTest
+    @ValueSource(ints = 1)
+    void testFindStudyGroupByArticleId(int articleId) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<ArticleDTO> StudyGroupByArticleId = articleService.selectStudyArticleInfo(articleId);
+            StudyGroupByArticleId.forEach(System.out::println);
+        });
+    }
+
     private static Stream<Arguments> getSearchCriteria() {
 
         Map<String, Object> criteria = new HashMap<>();
