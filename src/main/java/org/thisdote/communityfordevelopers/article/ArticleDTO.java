@@ -1,5 +1,10 @@
 package org.thisdote.communityfordevelopers.article;
 
+import org.thisdote.communityfordevelopers.reply.ReplyDTO;
+import org.thisdote.communityfordevelopers.user.UserDTO;
+
+import java.util.List;
+
 public class ArticleDTO {
 
     private int articleId;
@@ -19,11 +24,13 @@ public class ArticleDTO {
     private int studygroupId;
     private int studygroupCurrentMemberCount;
     private int studygroupPendingMemberCount;
+    private ReplyDTO replyDTOList;
+
 
     public ArticleDTO() {
     }
 
-    public ArticleDTO(int articleId, String articleTitle, String articleContent, String articleCategory, String articleCreateDate, String articleLastUpdateDate, int articleViewCount, int articleLikeCount, int articleReplyCount, int articleReportStatus, int studygroupMemberMaxCount, String studygroupRecruitmentDeadline, String articleQuestionCategory, int userCode, int studygroupId, int studygroupCurrentMemberCount, int studygroupPendingMemberCount) {
+    public ArticleDTO(int articleId, String articleTitle, String articleContent, String articleCategory, String articleCreateDate, String articleLastUpdateDate, int articleViewCount, int articleLikeCount, int articleReplyCount, int articleReportStatus, int studygroupMemberMaxCount, String studygroupRecruitmentDeadline, String articleQuestionCategory, int userCode, int studygroupId, int studygroupCurrentMemberCount, int studygroupPendingMemberCount, ReplyDTO replyDTOList) {
         this.articleId = articleId;
         this.articleTitle = articleTitle;
         this.articleContent = articleContent;
@@ -41,6 +48,20 @@ public class ArticleDTO {
         this.studygroupId = studygroupId;
         this.studygroupCurrentMemberCount = studygroupCurrentMemberCount;
         this.studygroupPendingMemberCount = studygroupPendingMemberCount;
+        this.replyDTOList = replyDTOList;
+    }
+
+    public ReplyDTO getReplyDTOList() {
+        return replyDTOList;
+    }
+
+    public void setReplyDTOList(ReplyDTO replyDTOList) {
+        this.replyDTOList = replyDTOList;
+    }
+
+    public ArticleDTO(int articleId, String articleTitle) {
+        this.articleId = articleId;
+        this.articleTitle = articleTitle;
     }
 
     public int getArticleId() {
@@ -199,6 +220,7 @@ public class ArticleDTO {
                 ", studygroupId=" + studygroupId +
                 ", studygroupCurrentMemberCount=" + studygroupCurrentMemberCount +
                 ", studygroupPendingMemberCount=" + studygroupPendingMemberCount +
+                ", replyDTOList=" + replyDTOList +
                 '}';
     }
 }
