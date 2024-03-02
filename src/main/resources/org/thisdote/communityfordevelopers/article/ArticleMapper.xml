@@ -31,18 +31,18 @@
              , A.ARTICLE_CONTENT
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CREATE_DATE
-             , ARTICLE_LAST_UPDATE_DATE
-             , ARTICLE_VIEW_COUNT
-             , ARTICLE_LIKE_COUNT
-             , ARTICLE_REPLY_COUNT
-             , ARTICLE_REPORT_STATUS
-             , STUDYGROUP_MEMBER_MAX_COUNT
-             , STUDYGROUP_RECRUITMENT_DEADLINE
-             , ARTICLE_QUESTION_CATEGORY
-             , USER_CODE
-             , STUDYGROUP_ID
-             , STUDYGROUP_CURRENT_MEMBER_COUNT
-             , STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
     </select>
 
@@ -53,20 +53,20 @@
              , A.ARTICLE_CONTENT
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CREATE_DATE
-             , ARTICLE_LAST_UPDATE_DATE
-             , ARTICLE_VIEW_COUNT
-             , ARTICLE_LIKE_COUNT
-             , ARTICLE_REPLY_COUNT
-             , ARTICLE_REPORT_STATUS
-             , STUDYGROUP_MEMBER_MAX_COUNT
-             , STUDYGROUP_RECRUITMENT_DEADLINE
-             , ARTICLE_QUESTION_CATEGORY
-             , USER_CODE
-             , STUDYGROUP_ID
-             , STUDYGROUP_CURRENT_MEMBER_COUNT
-             , STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
-         WHERE USER_CODE = #{userCode}
+         WHERE A.USER_CODE = #{userCode}
     </select>
 
     <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="String">
@@ -76,20 +76,20 @@
              , A.ARTICLE_CONTENT
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CREATE_DATE
-             , ARTICLE_LAST_UPDATE_DATE
-             , ARTICLE_VIEW_COUNT
-             , ARTICLE_LIKE_COUNT
-             , ARTICLE_REPLY_COUNT
-             , ARTICLE_REPORT_STATUS
-             , STUDYGROUP_MEMBER_MAX_COUNT
-             , STUDYGROUP_RECRUITMENT_DEADLINE
-             , ARTICLE_QUESTION_CATEGORY
-             , USER_CODE
-             , STUDYGROUP_ID
-             , STUDYGROUP_CURRENT_MEMBER_COUNT
-             , STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
-         WHERE ARTICLE_CATEGORY = #{category}
+         WHERE A.ARTICLE_CATEGORY = #{category}
     </select>
 
     <select id="selectArticleByCriteria"
@@ -101,18 +101,18 @@
              , A.ARTICLE_CONTENT
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CREATE_DATE
-             , ARTICLE_LAST_UPDATE_DATE
-             , ARTICLE_VIEW_COUNT
-             , ARTICLE_LIKE_COUNT
-             , ARTICLE_REPLY_COUNT
-             , ARTICLE_REPORT_STATUS
-             , STUDYGROUP_MEMBER_MAX_COUNT
-             , STUDYGROUP_RECRUITMENT_DEADLINE
-             , ARTICLE_QUESTION_CATEGORY
-             , USER_CODE
-             , STUDYGROUP_ID
-             , STUDYGROUP_CURRENT_MEMBER_COUNT
-             , STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
         <trim prefix="WHERE" prefixOverrides="AND | OR">
             <if test="CATEGORY != null">
