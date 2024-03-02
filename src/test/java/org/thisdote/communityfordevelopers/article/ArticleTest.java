@@ -29,9 +29,18 @@ public class ArticleTest {
     void TestFindAllQuestionArticle() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<ArticleDTO> articles = articleService.selectAllQuestionArticle();
-                    articles.forEach(System.out::println);
+                    List<ArticleDTO> article = articleService.selectAllQuestionArticle();
+                    article.forEach(System.out::println);
                 }
         );
+    }
+    @DisplayName("High View Count Question Article Test")
+    @Test
+    void testFindAllHighViewCountQuestionArticle() {
+        Assertions.assertDoesNotThrow(
+                () -> {
+                    List<ArticleDTO> article = articleService.selectAllHighViewCountQuestionArticle();
+                    article.forEach(System.out::println);
+                });
     }
 }

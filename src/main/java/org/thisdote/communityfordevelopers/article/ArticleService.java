@@ -22,4 +22,13 @@ public class ArticleService {
     public List<ArticleDTO> selectAllQuestionArticle() {
         return sqlSession.getMapper(ArticleMapper.class).selectAllQuestionArticle();
     }
+
+    public List<ArticleDTO> selectAllHighViewCountQuestionArticle() {
+        return sqlSession.getMapper(ArticleMapper.class).selectAllHighViewCountQuestionArticle();
+    }
+
+    public List<ArticleDTO> selectArticleByCategory() {
+
+        return sqlSession.getMapper(ArticleMapper.class).selectArticleByCategory();
+    }
 }

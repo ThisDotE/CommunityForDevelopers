@@ -9,4 +9,6 @@ public interface ArticleMapper {
     List<ArticleDTO> selectAllArticle();
 
     List<ArticleDTO> selectAllQuestionArticle();
+
+    List<ArticleDTO> selectAllHighViewCountQuestionArticle();
 }

@@ -60,4 +60,20 @@
         FROM ARTICLE
         WHERE ARTICLE_CATEGORY = '질문';
     </select>
+    <select id="selectAllHighViewCountQuestionArticle" resultMap="articleResultMap">
+        SELECT
+        ARTICLE_VIEW_COUNT
+        , ARTICLE_ID
+        , ARTICLE_TITLE
+        , USER_CODE
+        , ARTICLE_CATEGORY
+        , ARTICLE_CONTENT
+        , ARTICLE_LIKE_COUNT
+        , ARTICLE_REPLY_COUNT
+        , ARTICLE_CREATE_DATE
+        , ARTICLE_QUESTION_CATEGORY
+        FROM ARTICLE
+        WHERE ARTICLE_CATEGORY = '질문'
+        ORDER BY ARTICLE_VIEW_COUNT ASC;
+    </select>
 </mapper>

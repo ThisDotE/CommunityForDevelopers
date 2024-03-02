@@ -147,7 +147,7 @@ public class ArticleDTO {
         this.articleQuestionCategory = articleQuestionCategory;
     }
 
-    public int getUserCode() {
+    public Integer getUserCode() {
         return userCode;
     }
 
