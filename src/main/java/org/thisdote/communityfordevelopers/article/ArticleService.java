@@ -3,8 +3,14 @@ package org.thisdote.communityfordevelopers.article;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.thisdote.communityfordevelopers.reply.ReplyDTO;
+import org.thisdote.communityfordevelopers.reply.ReplyMapper;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ArticleService {
@@ -26,6 +32,13 @@ public class ArticleService {
     public List<ArticleDTO> selectArticleByCategory(String category) {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByCategory(category);
     }
+
+    public List<ArticleDTO> selectTitleArticle(String title){return  sqlSession.getMapper(ArticleMapper.class).selectTitleArticle(title);}
+
+    public List<ArticleDTO> selectCategoryArticle(String category){return sqlSession.getMapper(ArticleMapper.class).selectCategoryArticle(category);}
+
+    public List<ArticleDTO> selectStudyArticleInfo(int articleId) {return sqlSession.getMapper(ArticleMapper.class).selectStudyArticleInfo(articleId);}
+
 }
 
 /* TODO
