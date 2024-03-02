@@ -11,4 +11,8 @@ public interface ArticleMapper {
     List<ArticleDTO> selectAllQuestionArticle();
 
     List<ArticleDTO> selectAllHighViewCountQuestionArticle();
+
+    List<ArticleDTO> selectArticleByUser(int userCode);
+
+    List<ArticleDTO> selectArticleByCategory(String category);
 }

@@ -43,4 +43,24 @@ public class ArticleTest {
                     article.forEach(System.out::println);
                 });
     }
+
+    @DisplayName("회원 별 작성 게시글 조회")
+    @ParameterizedTest
+    @ValueSource(ints = 1)
+    void testFindArticleByUser(int userCode) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<ArticleDTO> articleByUser = articleService.selectArticleByUser(userCode);
+            articleByUser.forEach(System.out::println);
+        });
+    }
+
+    @DisplayName("카테고리 별 게시글 조회")
+    @ParameterizedTest
+    @ValueSource(strings = "질문")
+    void testFindArticleByCategory(String category) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
+            articleByCategory.forEach(System.out::println);
+        });
+    }
 }
