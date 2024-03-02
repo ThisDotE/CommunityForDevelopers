@@ -8,7 +8,6 @@ public class CommunityForDevelopersApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CommunityForDevelopersApplication.class, args);
-
-
     }
+
 }

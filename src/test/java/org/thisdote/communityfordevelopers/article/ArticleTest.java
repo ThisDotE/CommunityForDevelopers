@@ -4,12 +4,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.thisdote.communityfordevelopers.inquiry.InquiryDTO;
+import org.thisdote.communityfordevelopers.user.UserDTO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 @SpringBootTest
 public class ArticleTest {
@@ -48,14 +54,41 @@ public class ArticleTest {
         });
     }
 
-//    @DisplayName("카테고리 별 게시글 조회")
-//    @ParameterizedTest
-//    @EnumSource(names = "QA",value = ArticleCategory.class)
-//    void testFindArticleByCategory(ArticleCategory articleCategory) {
-//        Assertions.assertDoesNotThrow(() -> {
-//            ArticleCategory category = ArticleCategory.valueOf(articleCategory.name());
-//            List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
-//            articleByCategory.forEach(System.out::println);
-//        });
-//    }
+    private static Stream<Arguments> getFindArticleByCategory() {
+        int category = ArticleCategory.INFO.ordinal();
+//        category.put(ArticleCategory.INFO., 1);
+//        category.put(ArticleCategory.QA.ordinal(), 2);
+//        category.put(ArticleCategory.STUDY.ordinal(), 3);
+
+        return Stream.of(Arguments.of(category));
+    }
+    @DisplayName("카테고리 별 게시글 조회")
+    @ParameterizedTest
+    @ValueSource(ints = 1)
+    void testFindArticleByCategory(int category) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
+            articleByCategory.forEach(System.out::println);
+        });
+    }
+
+    private static Stream<Arguments> getSearchCriteria() {
+
+        Map<String, Object> criteria = new HashMap<>();
+//        criteria.put(SearchCriteriaEnum.CATEGORY.toString(), "질문");
+        criteria.put(SearchCriteriaEnum.TITLE.toString(), "점심");
+//        criteria.put(SearchCriteriaEnum.WRITER.toString(), 5);
+
+        return Stream.of(Arguments.of(criteria));
+    }
+
+    @DisplayName("게시글 검색")
+    @ParameterizedTest
+    @MethodSource("getSearchCriteria")
+    void testSearchArticleWithCriteria(Map<String, Object> criteria) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<ArticleDTO> articleList = articleService.selectArticleByCriteria(criteria);
+            articleList.forEach(System.out::println);
+        });
+    }
 }

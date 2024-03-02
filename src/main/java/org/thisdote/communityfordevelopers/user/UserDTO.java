@@ -9,7 +9,7 @@ public class UserDTO {
     private Date userBirthday;
     private String userPhone;
     private String userEmail;
-    private int userStudygroupStatus;
+    private int userStudyGroupStatus;
     private Date userRegistDate;
     private Date userInfoUpdateDate;
     private int userGrade;
@@ -24,7 +24,7 @@ public class UserDTO {
         this.userBirthday = userBirthday;
         this.userPhone = userPhone;
         this.userEmail = userEmail;
-        this.userStudygroupStatus = userStudygroupStatus;
+        this.userStudyGroupStatus = userStudygroupStatus;
         this.userRegistDate = userRegistDate;
         this.userInfoUpdateDate = userInfoUpdateDate;
         this.userGrade = userGrade;
@@ -48,8 +48,8 @@ public class UserDTO {
     public String getUserEmail() {
         return userEmail;
     }
-    public int getUserStudygroupStatus() {
-        return userStudygroupStatus;
+    public int getUserStudyGroupStatus() {
+        return userStudyGroupStatus;
     }
     public Date getUserRegistDate() {
         return userRegistDate;
@@ -70,7 +70,7 @@ public class UserDTO {
                 ", userBirthday=" + userBirthday +
                 ", userPhone='" + userPhone + '\'' +
                 ", userEmail='" + userEmail + '\'' +
-                ", userStudygroupStatus=" + userStudygroupStatus +
+                ", userStudyGroupStatus=" + userStudyGroupStatus +
                 ", userRegistDate=" + userRegistDate +
                 ", userInfoUpdateDate=" + userInfoUpdateDate +
                 ", userGrade=" + userGrade +

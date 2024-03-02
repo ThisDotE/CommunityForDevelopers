@@ -83,32 +83,61 @@
           FROM ARTICLE A
          WHERE USER_CODE = #{userCode}
     </select>
-    <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="String">
+    <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="_int">
         SELECT
-        A.ARTICLE_ID
-        , A.ARTICLE_TITLE
-        , A.ARTICLE_CONTENT
-        , A.ARTICLE_CATEGORY
-        , A.ARTICLE_CREATE_DATE
+        ARTICLE_ID
+        , ARTICLE_TITLE
+        , ARTICLE_CONTENT
+        , ARTICLE_CATEGORY
+        , ARTICLE_CREATE_DATE
         , ARTICLE_LAST_UPDATE_DATE
         , ARTICLE_VIEW_COUNT
         , ARTICLE_LIKE_COUNT
         , ARTICLE_REPLY_COUNT
         , ARTICLE_REPORT_STATUS
+        , STUDYGROUP_MEMBER_MAX_COUNT
+        , STUDYGROUP_RECRUITMENT_DEADLINE
         , ARTICLE_QUESTION_CATEGORY
         , USER_CODE
-        FROM ARTICLE A
-        <if test="category == 'ALL'">
+        , STUDYGROUP_ID
+        , STUDYGROUP_CURRENT_MEMBER_COUNT
+        , STUDYGROUP_PENDING_MEMBER_COUNT
+        FROM ARTICLE
+        WHERE ARTICLE_CATEGORY = #{articleCategory}
+    </select>
 
-        </if>
-        <if test="category == 'INFO'">
-            WHERE ARTICLE_CATEGORY = 1
-        </if>
-        <if test="category == 'QA'">
-            WHERE ARTICLE_CATEGORY = 2
-        </if>
-        <if test="category =='STUDY'">
-            WHERE ARTICLE_CATEGORY = 3
-        </if>
+    <select id="selectArticleByCriteria"
+            resultMap="articleResultMap"
+            parameterType="hashmap">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CREATE_DATE
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+          FROM ARTICLE A
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="CATEGORY != null">
+                A.ARTICLE_CATEGORY = #{CATEGORY}
+            </if>
+            <if test="TITLE != null">
+                AND A.ARTICLE_TITLE LIKE CONCAT('%', #{TITLE}, '%')
+            </if>
+            <if test="WRITER != null">
+                AND A.USER_CODE = #{WRITER}
+            </if>
+        </trim>
     </select>
 </mapper>
