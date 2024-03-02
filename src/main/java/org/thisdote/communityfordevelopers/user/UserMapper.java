@@ -7,4 +7,10 @@ import java.util.List;
 public interface UserMapper {
 
     List<UserDTO> selectAllUser();
+
+    List<UserDTO> selectUserId(String userId);
+
+    List<UserDTO> selectUserCode(int userCode);
+
+    List<UserDTO> updateUserEmail(String userEmail);
 }

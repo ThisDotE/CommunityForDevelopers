@@ -10,7 +10,7 @@
         <result property="userBirthday" column="USER_BIRTHDAY"/>
         <result property="userPhone" column="USER_PHONE"/>
         <result property="userEmail" column="USER_EMAIL"/>
-        <result property="userStudygroupStatus" column="USER_STUDYGROUP_STATUS"/>
+        <result property="userStudyGroupStatus" column="USER_STUDYGROUP_STATUS"/>
         <result property="userRegistDate" column="USER_REGIST_DATE"/>
         <result property="userInfoUpdateDate" column="USER_INFO_UPDATE_DATE"/>
         <result property="userGrade" column="USER_GRADE"/>
@@ -30,4 +30,37 @@
         , A.USER_GRADE
         FROM USER A
     </select>
+
+    <select id="selectUserId" resultMap="userResultMap" parameterType="String">
+        SELECT
+        A.USER_CODE
+        , A.USER_ID
+        , A.USER_PASSWORD
+        , A.USER_BIRTHDAY
+        , A.USER_PHONE
+        , A.USER_EMAIL
+        , A.USER_STUDYGROUP_STATUS
+        , A.USER_REGIST_DATE
+        , A.USER_INFO_UPDATE_DATE
+        , A.USER_GRADE
+        FROM USER A
+        WHERE USER_ID = #{userId};
+    </select>
+
+    <select id="selectUserCode" resultMap="userResultMap" parameterType="_int">
+        SELECT
+        A.USER_CODE
+        , A.USER_ID
+        , A.USER_PASSWORD
+        , A.USER_BIRTHDAY
+        , A.USER_PHONE
+        , A.USER_EMAIL
+        , A.USER_STUDYGROUP_STATUS
+        , A.USER_REGIST_DATE
+        , A.USER_INFO_UPDATE_DATE
+        , A.USER_GRADE
+        FROM USER A
+        WHERE USER_CODE = #{userCode};
+    </select>
+
 </mapper>

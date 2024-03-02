@@ -8,6 +8,7 @@ import org.thisdote.communityfordevelopers.reported_article.ReportedArticleDTO;
 import org.thisdote.communityfordevelopers.reported_article.ReportedArticleMapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserService {
@@ -21,4 +22,13 @@ public class UserService {
     public List<UserDTO> selectAllUser() {
         return sqlSession.getMapper(UserMapper.class).selectAllUser();
     }
+
+    public List<UserDTO> selectUserId(String userId) {
+        return sqlSession.getMapper(UserMapper.class).selectUserId(userId);
+    }
+
+    public List<UserDTO> selectUserCode(int userCode) {
+        return sqlSession.getMapper(UserMapper.class).selectUserCode(userCode);
+    }
+
 }
