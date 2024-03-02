@@ -9,4 +9,6 @@ public interface ArticleMapper {
     List<ArticleDTO> selectAllArticle();
 
     List<ArticleDTO> selectArticleByUser(int userCode);
+
+    List<ArticleDTO> selectArticleByCategory(String category);
 }
