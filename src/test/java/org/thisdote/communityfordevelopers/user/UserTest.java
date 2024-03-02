@@ -49,4 +49,16 @@ public class UserTest {
                 }
         );
     }
+
+    @DisplayName("회원번호로 한 명의 회원정보 조회(마이페이지 기능)")
+    @ParameterizedTest
+    @ValueSource(ints = 1)
+    void testFindUserByUserCode(int userCode) {
+        Assertions.assertDoesNotThrow(
+                () -> {
+                    List<UserDTO> users = userService.selectUserByUserCode(userCode);
+                    users.forEach(System.out::println);
+                }
+        );
+    }
 }
