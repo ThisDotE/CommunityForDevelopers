@@ -7,4 +7,6 @@ import java.util.List;
 @Mapper
 public interface ArticleMapper {
     List<ArticleDTO> selectAllArticle();
+
+    List<ArticleDTO> selectArticleByUser(int userCode);
 }
