@@ -4,8 +4,6 @@ package org.thisdote.communityfordevelopers.user;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.thisdote.communityfordevelopers.reported_article.ReportedArticleDTO;
-import org.thisdote.communityfordevelopers.reported_article.ReportedArticleMapper;
 
 import java.util.List;
 import java.util.Map;
@@ -31,4 +29,8 @@ public class UserService {
         return sqlSession.getMapper(UserMapper.class).selectUserCode(userCode);
     }
 
+
+    public List<UserDTO> selectUserByUserCode(int userCode) {
+        return sqlSession.getMapper(UserMapper.class).selectUserByUserCode(userCode);
+    }
 }

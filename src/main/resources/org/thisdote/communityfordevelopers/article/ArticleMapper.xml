@@ -143,22 +143,6 @@
         </trim>
     </select>
 
-    <select id="selectTitleArticle" resultMap="articleResultMap" parameterType="String">
-        SELECT
-            A.ARTICLE_ID
-          , A.ARTICLE_TITLE
-         FROM ARTICLE A
-        WHERE A.ARTICLE_TITLE = #{title}
-
-    </select>
-
-    <select id="selectCategoryArticle" resultMap="articleResultMap" parameterType="String">
-        SELECT
-            A.ARTICLE_CATEGORY
-          FROM ARTICLE A
-         WHERE A.ARTICLE_CATEGORY = #{category}
-    </select>
-
     <resultMap id="articleInfoReply" type="org.thisdote.communityfordevelopers.article.ArticleDTO" extends="articleResultMap">
         <association property="replyDTOList" javaType="org.thisdote.communityfordevelopers.reply.ReplyDTO">
             <id property="replyId" column="reply_id"/>

@@ -1,5 +1,7 @@
 package org.thisdote.communityfordevelopers.user;
 
+import org.thisdote.communityfordevelopers.studygroup_member.StudyGroupMemberDTO;
+
 import java.util.Date;
 
 public class UserDTO {
@@ -13,10 +15,11 @@ public class UserDTO {
     private Date userRegistDate;
     private Date userInfoUpdateDate;
     private int userGrade;
+    private StudyGroupMemberDTO studyGroupMemberDTO;
 
     public UserDTO() {
     }
-  
+
     public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudygroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade) {
         this.userCode = userCode;
         this.userId = userId;
@@ -28,6 +31,20 @@ public class UserDTO {
         this.userRegistDate = userRegistDate;
         this.userInfoUpdateDate = userInfoUpdateDate;
         this.userGrade = userGrade;
+    }
+
+    public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudyGroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade, StudyGroupMemberDTO studyGroupMemberDTO) {
+        this.userCode = userCode;
+        this.userId = userId;
+        this.userPassword = userPassword;
+        this.userBirthday = userBirthday;
+        this.userPhone = userPhone;
+        this.userEmail = userEmail;
+        this.userStudyGroupStatus = userStudyGroupStatus;
+        this.userRegistDate = userRegistDate;
+        this.userInfoUpdateDate = userInfoUpdateDate;
+        this.userGrade = userGrade;
+        this.studyGroupMemberDTO = studyGroupMemberDTO;
     }
 
     public int getUserCode() {
@@ -61,6 +78,54 @@ public class UserDTO {
         return userGrade;
     }
 
+    public void setUserCode(int userCode) {
+        this.userCode = userCode;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public void setUserBirthday(Date userBirthday) {
+        this.userBirthday = userBirthday;
+    }
+
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public void setUserStudyGroupStatus(int userStudyGroupStatus) {
+        this.userStudyGroupStatus = userStudyGroupStatus;
+    }
+
+    public void setUserRegistDate(Date userRegistDate) {
+        this.userRegistDate = userRegistDate;
+    }
+
+    public void setUserInfoUpdateDate(Date userInfoUpdateDate) {
+        this.userInfoUpdateDate = userInfoUpdateDate;
+    }
+
+    public void setUserGrade(int userGrade) {
+        this.userGrade = userGrade;
+    }
+
+    public void setStudygroupMemberDTO(StudyGroupMemberDTO studyGroupMemberDTO) {
+        this.studyGroupMemberDTO = studyGroupMemberDTO;
+    }
+
+    public StudyGroupMemberDTO getStudyGroupMemberDTO() {
+        return studyGroupMemberDTO;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -74,6 +139,7 @@ public class UserDTO {
                 ", userRegistDate=" + userRegistDate +
                 ", userInfoUpdateDate=" + userInfoUpdateDate +
                 ", userGrade=" + userGrade +
+                ", studyGroupMemberDTO=" + studyGroupMemberDTO +
                 '}';
     }
 }
