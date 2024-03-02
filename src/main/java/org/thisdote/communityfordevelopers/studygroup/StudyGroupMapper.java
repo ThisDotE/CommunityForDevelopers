@@ -8,4 +8,8 @@ import java.util.List;
 public interface StudyGroupMapper {
 
     List<StudyGroupDTO> selectAllStudyGroup();
+
+    List<StudyGroupDTO> selectAllEnglishStudyGroup();
+
+    List<StudyGroupDTO> selectAllLicenseStudyGroup();
 }

@@ -19,4 +19,12 @@ public class StudyGroupService {
     List<StudyGroupDTO> findAllStudyGroup() {
         return sqlSession.getMapper(StudyGroupMapper.class).selectAllStudyGroup();
     }
+
+    List<StudyGroupDTO> findAllEnglishStudyGroup() {
+        return sqlSession.getMapper(StudyGroupMapper.class).selectAllEnglishStudyGroup();
+    }
+
+    List<StudyGroupDTO> findAllLicenseStudyGroup() {
+        return sqlSession.getMapper(StudyGroupMapper.class).selectAllLicenseStudyGroup();
+    }
 }
