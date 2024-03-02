@@ -7,7 +7,7 @@
 
 
     <resultMap id="articleResultMap" type="org.thisdote.communityfordevelopers.article.ArticleDTO">
-        <id property="articleId" column="ARTICLE_ID"/>
+        <id property="articleId" column="USER_CODE"/>
         <result property="articleTitle" column="ARTICLE_TITLE"/>
         <result property="articleContent" column="ARTICLE_CONTENT"/>
         <result property="articleCategory" column="ARTICLE_CATEGORY"/>
@@ -118,7 +118,7 @@
             <result property="replyCreatedDate" column="reply_create_date"/>
             <result property="replyLastUpdateDate" column="reply_last_update_date"/>
             <result property="replyLikeCount" column="reply_like_count"/>
-            <result property="userCode" column="user_code"/>
+            <result property="userCode" column="REPLY_USER_CODE"/>
         </association>
     </resultMap>
     <select id="selectStudyArticleInfo" resultMap="articleInfoReply" parameterType="_int">
@@ -135,8 +135,9 @@
           , A.STUDYGROUP_CURRENT_MEMBER_COUNT
           , A.STUDYGROUP_RECRUITMENT_DEADLINE
           , A.STUDYGROUP_PENDING_MEMBER_COUNT
+          , B.REPLY_ID
           , B.REPLY_CONTENT
-          , B.USER_CODE
+          , B.USER_CODE AS REPLY_USER_CODE
           , B.REPLY_CREATE_DATE
           , B.REPLY_CREATE_DATE
           , B.REPLY_LAST_UPDATE_DATE
