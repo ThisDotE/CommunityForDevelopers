@@ -60,22 +60,6 @@
         FROM ARTICLE
         WHERE ARTICLE_CATEGORY = '질문';
     </select>
-    <select id="selectAllHighViewCountQuestionArticle" resultMap="articleResultMap">
-        SELECT
-        ARTICLE_VIEW_COUNT
-        , ARTICLE_ID
-        , ARTICLE_TITLE
-        , USER_CODE
-        , ARTICLE_CATEGORY
-        , ARTICLE_CONTENT
-        , ARTICLE_LIKE_COUNT
-        , ARTICLE_REPLY_COUNT
-        , ARTICLE_CREATE_DATE
-        , ARTICLE_QUESTION_CATEGORY
-        FROM ARTICLE
-        WHERE ARTICLE_CATEGORY = '질문'
-        ORDER BY ARTICLE_VIEW_COUNT ASC;
-    </select>
 
     <select id="selectArticleByUser" resultMap="articleResultMap" parameterType="_int">
         SELECT
@@ -99,27 +83,32 @@
           FROM ARTICLE A
          WHERE USER_CODE = #{userCode}
     </select>
-
     <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="String">
         SELECT
-               A.ARTICLE_ID
-             , A.ARTICLE_TITLE
-             , A.ARTICLE_CONTENT
-             , A.ARTICLE_CATEGORY
-             , A.ARTICLE_CREATE_DATE
-             , ARTICLE_LAST_UPDATE_DATE
-             , ARTICLE_VIEW_COUNT
-             , ARTICLE_LIKE_COUNT
-             , ARTICLE_REPLY_COUNT
-             , ARTICLE_REPORT_STATUS
-             , STUDYGROUP_MEMBER_MAX_COUNT
-             , STUDYGROUP_RECRUITMENT_DEADLINE
-             , ARTICLE_QUESTION_CATEGORY
-             , USER_CODE
-             , STUDYGROUP_ID
-             , STUDYGROUP_CURRENT_MEMBER_COUNT
-             , STUDYGROUP_PENDING_MEMBER_COUNT
-          FROM ARTICLE A
-         WHERE ARTICLE_CATEGORY = #{category}
+        A.ARTICLE_ID
+        , A.ARTICLE_TITLE
+        , A.ARTICLE_CONTENT
+        , A.ARTICLE_CATEGORY
+        , A.ARTICLE_CREATE_DATE
+        , ARTICLE_LAST_UPDATE_DATE
+        , ARTICLE_VIEW_COUNT
+        , ARTICLE_LIKE_COUNT
+        , ARTICLE_REPLY_COUNT
+        , ARTICLE_REPORT_STATUS
+        , ARTICLE_QUESTION_CATEGORY
+        , USER_CODE
+        FROM ARTICLE A
+        <if test="category == 'ALL'">
+
+        </if>
+        <if test="category == 'INFO'">
+            WHERE ARTICLE_CATEGORY = 1
+        </if>
+        <if test="category == 'QA'">
+            WHERE ARTICLE_CATEGORY = 2
+        </if>
+        <if test="category =='STUDY'">
+            WHERE ARTICLE_CATEGORY = 3
+        </if>
     </select>
 </mapper>

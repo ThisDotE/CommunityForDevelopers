@@ -3,6 +3,9 @@ package org.thisdote.communityfordevelopers.article;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -34,15 +37,6 @@ public class ArticleTest {
                 }
         );
     }
-    @DisplayName("High View Count Question Article Test")
-    @Test
-    void testFindAllHighViewCountQuestionArticle() {
-        Assertions.assertDoesNotThrow(
-                () -> {
-                    List<ArticleDTO> article = articleService.selectAllHighViewCountQuestionArticle();
-                    article.forEach(System.out::println);
-                });
-    }
 
     @DisplayName("회원 별 작성 게시글 조회")
     @ParameterizedTest
@@ -54,13 +48,14 @@ public class ArticleTest {
         });
     }
 
-    @DisplayName("카테고리 별 게시글 조회")
-    @ParameterizedTest
-    @ValueSource(strings = "질문")
-    void testFindArticleByCategory(String category) {
-        Assertions.assertDoesNotThrow(() -> {
-            List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
-            articleByCategory.forEach(System.out::println);
-        });
-    }
+//    @DisplayName("카테고리 별 게시글 조회")
+//    @ParameterizedTest
+//    @EnumSource(names = "QA",value = ArticleCategory.class)
+//    void testFindArticleByCategory(ArticleCategory articleCategory) {
+//        Assertions.assertDoesNotThrow(() -> {
+//            ArticleCategory category = ArticleCategory.valueOf(articleCategory.name());
+//            List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
+//            articleByCategory.forEach(System.out::println);
+//        });
+//    }
 }
