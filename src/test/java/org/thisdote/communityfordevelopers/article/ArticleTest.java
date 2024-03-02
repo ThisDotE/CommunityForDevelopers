@@ -4,13 +4,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.thisdote.communityfordevelopers.inquiry.InquiryDTO;
 import org.thisdote.communityfordevelopers.user.UserDTO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 @SpringBootTest
 public class ArticleTest {
@@ -97,4 +102,23 @@ public class ArticleTest {
         });
     }
 
+    private static Stream<Arguments> getSearchCriteria() {
+
+        Map<String, Object> criteria = new HashMap<>();
+//        criteria.put(SearchCriteriaEnum.CATEGORY.toString(), "질문");
+        criteria.put(SearchCriteriaEnum.TITLE.toString(), "점심");
+//        criteria.put(SearchCriteriaEnum.WRITER.toString(), 5);
+
+        return Stream.of(Arguments.of(criteria));
+    }
+
+    @DisplayName("게시글 검색")
+    @ParameterizedTest
+    @MethodSource("getSearchCriteria")
+    void testSearchArticleWithCriteria(Map<String, Object> criteria) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<ArticleDTO> articleList = articleService.selectArticleByCriteria(criteria);
+            articleList.forEach(System.out::println);
+        });
+    }
 }

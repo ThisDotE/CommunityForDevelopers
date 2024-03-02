@@ -39,6 +39,9 @@ public class ArticleService {
 
     public List<ArticleDTO> selectStudyArticleInfo(int articleId) {return sqlSession.getMapper(ArticleMapper.class).selectStudyArticleInfo(articleId);}
 
+    public List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria) {
+        return sqlSession.getMapper(ArticleMapper.class).selectArticleByCriteria(criteria);
+    }
 }
 
 /* TODO
