@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ArticleService {
@@ -25,6 +26,10 @@ public class ArticleService {
 
     public List<ArticleDTO> selectArticleByCategory(String category) {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByCategory(category);
+    }
+
+    public List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria) {
+        return sqlSession.getMapper(ArticleMapper.class).selectArticleByCriteria(criteria);
     }
 }
 

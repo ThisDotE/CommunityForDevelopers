@@ -91,4 +91,39 @@
           FROM ARTICLE A
          WHERE ARTICLE_CATEGORY = #{category}
     </select>
+
+    <select id="selectArticleByCriteria"
+            resultMap="articleResultMap"
+            parameterType="hashmap">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CREATE_DATE
+             , ARTICLE_LAST_UPDATE_DATE
+             , ARTICLE_VIEW_COUNT
+             , ARTICLE_LIKE_COUNT
+             , ARTICLE_REPLY_COUNT
+             , ARTICLE_REPORT_STATUS
+             , STUDYGROUP_MEMBER_MAX_COUNT
+             , STUDYGROUP_RECRUITMENT_DEADLINE
+             , ARTICLE_QUESTION_CATEGORY
+             , USER_CODE
+             , STUDYGROUP_ID
+             , STUDYGROUP_CURRENT_MEMBER_COUNT
+             , STUDYGROUP_PENDING_MEMBER_COUNT
+          FROM ARTICLE A
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="CATEGORY != null">
+                A.ARTICLE_CATEGORY = #{CATEGORY}
+            </if>
+            <if test="TITLE != null">
+                AND A.ARTICLE_TITLE LIKE CONCAT('%', #{TITLE}, '%')
+            </if>
+            <if test="WRITER != null">
+                AND A.USER_CODE = #{WRITER}
+            </if>
+        </trim>
+    </select>
 </mapper>
