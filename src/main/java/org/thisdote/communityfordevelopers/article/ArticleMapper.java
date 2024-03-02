@@ -9,11 +9,13 @@ import java.util.Map;
 public interface ArticleMapper {
     List<ArticleDTO> selectAllArticle();
 
-    List<ArticleDTO> selectArticleByUser(int userCode);
+    List<ArticleDTO> selectAllQuestionArticle();
 
-    List<ArticleDTO> selectArticleByCategory(String category);
+    List<ArticleDTO> selectArticleByUser(int userCode);
 
     List<ArticleDTO> selectStudyArticleInfo(int articleId);
 
     List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria);
+
+    List<ArticleDTO> selectArticleByCategory(int articleCategory);
 }

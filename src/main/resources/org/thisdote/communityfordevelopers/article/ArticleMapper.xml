@@ -33,19 +33,34 @@
              , A.ARTICLE_CONTENT
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CREATE_DATE
-             , A.ARTICLE_LAST_UPDATE_DATE
-             , A.ARTICLE_VIEW_COUNT
-             , A.ARTICLE_LIKE_COUNT
-             , A.ARTICLE_REPLY_COUNT
-             , A.ARTICLE_REPORT_STATUS
-             , A.STUDYGROUP_MEMBER_MAX_COUNT
-             , A.STUDYGROUP_RECRUITMENT_DEADLINE
-             , A.ARTICLE_QUESTION_CATEGORY
-             , A.USER_CODE
-             , A.STUDYGROUP_ID
-             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
-             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , ARTICLE_LAST_UPDATE_DATE
+             , ARTICLE_VIEW_COUNT
+             , ARTICLE_LIKE_COUNT
+             , ARTICLE_REPLY_COUNT
+             , ARTICLE_REPORT_STATUS
+             , STUDYGROUP_MEMBER_MAX_COUNT
+             , STUDYGROUP_RECRUITMENT_DEADLINE
+             , ARTICLE_QUESTION_CATEGORY
+             , USER_CODE
+             , STUDYGROUP_ID
+             , STUDYGROUP_CURRENT_MEMBER_COUNT
+             , STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
+    </select>
+    <select id="selectAllQuestionArticle" resultMap="articleResultMap">
+        SELECT
+        ARTICLE_ID
+        , ARTICLE_TITLE
+        , USER_CODE
+        , ARTICLE_CATEGORY
+        , ARTICLE_CONTENT
+        , ARTICLE_LIKE_COUNT
+        , ARTICLE_REPLY_COUNT
+        , ARTICLE_VIEW_COUNT
+        , ARTICLE_CREATE_DATE
+        , ARTICLE_QUESTION_CATEGORY
+        FROM ARTICLE
+        WHERE ARTICLE_CATEGORY = '질문';
     </select>
 
     <select id="selectArticleByUser" resultMap="articleResultMap" parameterType="_int">
@@ -55,43 +70,42 @@
              , A.ARTICLE_CONTENT
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CREATE_DATE
-             , A.ARTICLE_LAST_UPDATE_DATE
-             , A.ARTICLE_VIEW_COUNT
-             , A.ARTICLE_LIKE_COUNT
-             , A.ARTICLE_REPLY_COUNT
-             , A.ARTICLE_REPORT_STATUS
-             , A.STUDYGROUP_MEMBER_MAX_COUNT
-             , A.STUDYGROUP_RECRUITMENT_DEADLINE
-             , A.ARTICLE_QUESTION_CATEGORY
-             , A.USER_CODE
-             , A.STUDYGROUP_ID
-             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
-             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , ARTICLE_LAST_UPDATE_DATE
+             , ARTICLE_VIEW_COUNT
+             , ARTICLE_LIKE_COUNT
+             , ARTICLE_REPLY_COUNT
+             , ARTICLE_REPORT_STATUS
+             , STUDYGROUP_MEMBER_MAX_COUNT
+             , STUDYGROUP_RECRUITMENT_DEADLINE
+             , ARTICLE_QUESTION_CATEGORY
+             , USER_CODE
+             , STUDYGROUP_ID
+             , STUDYGROUP_CURRENT_MEMBER_COUNT
+             , STUDYGROUP_PENDING_MEMBER_COUNT
           FROM ARTICLE A
-         WHERE A.USER_CODE = #{userCode}
+         WHERE USER_CODE = #{userCode}
     </select>
-
-    <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="String">
+    <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="_int">
         SELECT
-               A.ARTICLE_ID
-             , A.ARTICLE_TITLE
-             , A.ARTICLE_CONTENT
-             , A.ARTICLE_CATEGORY
-             , A.ARTICLE_CREATE_DATE
-             , A.ARTICLE_LAST_UPDATE_DATE
-             , A.ARTICLE_VIEW_COUNT
-             , A.ARTICLE_LIKE_COUNT
-             , A.ARTICLE_REPLY_COUNT
-             , A.ARTICLE_REPORT_STATUS
-             , A.STUDYGROUP_MEMBER_MAX_COUNT
-             , A.STUDYGROUP_RECRUITMENT_DEADLINE
-             , A.ARTICLE_QUESTION_CATEGORY
-             , A.USER_CODE
-             , A.STUDYGROUP_ID
-             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
-             , A.STUDYGROUP_PENDING_MEMBER_COUNT
-          FROM ARTICLE A
-         WHERE A.ARTICLE_CATEGORY = #{category}
+        ARTICLE_ID
+        , ARTICLE_TITLE
+        , ARTICLE_CONTENT
+        , ARTICLE_CATEGORY
+        , ARTICLE_CREATE_DATE
+        , ARTICLE_LAST_UPDATE_DATE
+        , ARTICLE_VIEW_COUNT
+        , ARTICLE_LIKE_COUNT
+        , ARTICLE_REPLY_COUNT
+        , ARTICLE_REPORT_STATUS
+        , STUDYGROUP_MEMBER_MAX_COUNT
+        , STUDYGROUP_RECRUITMENT_DEADLINE
+        , ARTICLE_QUESTION_CATEGORY
+        , USER_CODE
+        , STUDYGROUP_ID
+        , STUDYGROUP_CURRENT_MEMBER_COUNT
+        , STUDYGROUP_PENDING_MEMBER_COUNT
+        FROM ARTICLE
+        WHERE ARTICLE_CATEGORY = #{articleCategory}
     </select>
 
     <select id="selectArticleByCriteria"

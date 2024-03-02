@@ -33,6 +33,16 @@ public class ArticleTest {
                 }
         );
     }
+    @DisplayName("Question Article Test")
+    @Test
+    void TestFindAllQuestionArticle() {
+        Assertions.assertDoesNotThrow(
+                () -> {
+                    List<ArticleDTO> article = articleService.selectAllQuestionArticle();
+                    article.forEach(System.out::println);
+                }
+        );
+    }
 
     @DisplayName("회원 별 작성 게시글 조회")
     @ParameterizedTest
@@ -44,10 +54,18 @@ public class ArticleTest {
         });
     }
 
+    private static Stream<Arguments> getFindArticleByCategory() {
+        int category = ArticleCategory.INFO.ordinal();
+//        category.put(ArticleCategory.INFO., 1);
+//        category.put(ArticleCategory.QA.ordinal(), 2);
+//        category.put(ArticleCategory.STUDY.ordinal(), 3);
+
+        return Stream.of(Arguments.of(category));
+    }
     @DisplayName("카테고리 별 게시글 조회")
     @ParameterizedTest
-    @ValueSource(strings = "질문")
-    void testFindArticleByCategory(String category) {
+    @ValueSource(ints = 1)
+    void testFindArticleByCategory(int category) {
         Assertions.assertDoesNotThrow(() -> {
             List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
             articleByCategory.forEach(System.out::println);
