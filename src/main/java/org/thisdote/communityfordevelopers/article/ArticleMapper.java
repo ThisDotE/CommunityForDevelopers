@@ -13,5 +13,11 @@ public interface ArticleMapper {
 
     List<ArticleDTO> selectArticleByCategory(String category);
 
+    List<ArticleDTO> selectTitleArticle(String article);
+
+    List<ArticleDTO> selectCategoryArticle(String category);
+
+    List<ArticleDTO> selectStudyArticleInfo(int articleId);
+
     List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria);
 }

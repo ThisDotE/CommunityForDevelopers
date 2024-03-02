@@ -2,10 +2,12 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="org.thisdote.communityfordevelopers.article.ArticleMapper">
 
+
     <resultMap id="articleResultMap" type="org.thisdote.communityfordevelopers.article.ArticleDTO">
-        <id property="articleId" column="ARTICLE_ID"/>
+        <id property="articleId" column="USER_CODE"/>
         <result property="articleTitle" column="ARTICLE_TITLE"/>
         <result property="articleContent" column="ARTICLE_CONTENT"/>
         <result property="articleCategory" column="ARTICLE_CATEGORY"/>
@@ -126,4 +128,60 @@
             </if>
         </trim>
     </select>
+
+    <select id="selectTitleArticle" resultMap="articleResultMap" parameterType="String">
+        SELECT
+            A.ARTICLE_ID
+          , A.ARTICLE_TITLE
+         FROM ARTICLE A
+        WHERE A.ARTICLE_TITLE = #{title}
+
+    </select>
+
+    <select id="selectCategoryArticle" resultMap="articleResultMap" parameterType="String">
+        SELECT
+            A.ARTICLE_CATEGORY
+          FROM ARTICLE A
+         WHERE A.ARTICLE_CATEGORY = #{category}
+    </select>
+
+    <resultMap id="articleInfoReply" type="org.thisdote.communityfordevelopers.article.ArticleDTO" extends="articleResultMap">
+        <association property="replyDTOList" javaType="org.thisdote.communityfordevelopers.reply.ReplyDTO">
+            <id property="replyId" column="reply_id"/>
+            <result property="replyReportStatus" column="reply_report_status"/>
+            <result property="replyContent" column="reply_content"/>
+            <result property="replyCreatedDate" column="reply_create_date"/>
+            <result property="replyLastUpdateDate" column="reply_last_update_date"/>
+            <result property="replyLikeCount" column="reply_like_count"/>
+            <result property="userCode" column="REPLY_USER_CODE"/>
+        </association>
+    </resultMap>
+    <select id="selectStudyArticleInfo" resultMap="articleInfoReply" parameterType="_int">
+        SELECT
+            A.ARTICLE_ID
+          , A.USER_CODE
+          , A.ARTICLE_CATEGORY
+          , A.ARTICLE_CONTENT
+          , A.ARTICLE_LIKE_COUNT
+          , A.ARTICLE_REPLY_COUNT
+          , A.ARTICLE_VIEW_COUNT
+          , A.ARTICLE_LAST_UPDATE_DATE
+          , A.STUDYGROUP_MEMBER_MAX_COUNT
+          , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+          , A.STUDYGROUP_RECRUITMENT_DEADLINE
+          , A.STUDYGROUP_PENDING_MEMBER_COUNT
+          , B.REPLY_ID
+          , B.REPLY_CONTENT
+          , B.USER_CODE AS REPLY_USER_CODE
+          , B.REPLY_CREATE_DATE
+          , B.REPLY_CREATE_DATE
+          , B.REPLY_LAST_UPDATE_DATE
+          , B.REPLY_LIKE_COUNT
+         FROM ARTICLE A
+        INNER JOIN REPLY B ON (A.ARTICLE_ID = B.ARTICLE_ID)
+        WHERE A.ARTICLE_ID = #{ articleId }
+
+    </select>
+
+
 </mapper>
