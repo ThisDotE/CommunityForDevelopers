@@ -14,7 +14,7 @@ public class StudyGroupTests {
     @Autowired
     private StudyGroupService studyGroupService;
 
-    @DisplayName("스터디 그룹 전체 조회 확인 테스트")
+    @DisplayName("All StudyGroup Test")
     @Test
     void testFindAllStudyGroup() {
         Assertions.assertDoesNotThrow(() -> {
@@ -23,5 +23,21 @@ public class StudyGroupTests {
         });
     }
 
+    @DisplayName("All English StudyGroup Test")
+    @Test
+    void testFindAllEnglishStudyGroup() {
+        Assertions.assertDoesNotThrow(() -> {
+            List<StudyGroupDTO> englishGroup = studyGroupService.findAllEnglishStudyGroup();
+            englishGroup.forEach(System.out::println);
+        });
+    }
 
+    @DisplayName("All License StudyGroup Test")
+    @Test
+    void testFindAllLicenseStudyGroup() {
+        Assertions.assertDoesNotThrow(() -> {
+            List<StudyGroupDTO> licenseGroup = studyGroupService.findAllLicenseStudyGroup();
+            licenseGroup.forEach(System.out::println);
+        });
+    }
 }

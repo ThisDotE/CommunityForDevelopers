@@ -24,4 +24,31 @@
              , A.studygroup_content
           FROM studygroup A;
     </select>
+
+    <select id="selectAllEnglishStudyGroup" resultMap="studyGroupResultMap">
+        SELECT
+        studygroup_id
+        , studygroup_type
+        , studygroup_create_date
+        , studygroup_member_count
+        , studygroup_activation_status
+        , studygroup_study_time
+        , studygroup_content
+        FROM studygroup
+        WHERE studygroup_type = '영어 시험 스터디';
+    </select>
+
+    <select id="selectAllLicenseStudyGroup" resultMap="studyGroupResultMap">
+        SELECT
+        studygroup_id
+        , studygroup_type
+        , studygroup_create_date
+        , studygroup_member_count
+        , studygroup_activation_status
+        , studygroup_study_time
+        , studygroup_content
+        FROM studygroup
+        WHERE studygroup_type = '국가 자격증 스터디';
+    </select>
+
 </mapper>
