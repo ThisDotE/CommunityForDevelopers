@@ -27,4 +27,17 @@
           FROM REPLY A;
     </select>
 
+    <select id="selectReplyByUser" resultMap="replyResultMap" parameterType="_int">
+        SELECT
+               A.REPLY_ID
+             , A.REPLY_REPORT_STATUS
+             , A.REPLY_CONTENT
+             , A.REPLY_CREATE_DATE
+             , A.REPLY_LAST_UPDATE_DATE
+             , A.REPLY_LIKE_COUNT
+             , A.USER_CODE
+          FROM REPLY A
+         WHERE A.user_code = #{userCode};
+    </select>
+
 </mapper>
