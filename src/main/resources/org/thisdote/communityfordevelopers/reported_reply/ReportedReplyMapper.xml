@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.thisdote.communityfordevelopers.reported_article.ReportedArticleMapper">
+<mapper namespace="org.thisdote.communityfordevelopers.reported_reply.ReportedReplyMapper">
 
-    <resultMap id="reportedArticleResultMap" type="org.thisdote.communityfordevelopers.reported_article.ReportedArticleDTO">
-        <id property="articleId" column="ARTICLE_ID"/>
+    <resultMap id="reportedReplyResultMap" type="org.thisdote.communityfordevelopers.reported_reply.ReportedReplyDTO">
+        <id property="replyId" column="REPLY_ID"/>
         <result property="userCode" column="USER_CODE"/>
         <result property="reportDate" column="REPORT_DATE"/>
         <result property="reportContent" column="REPORT_CONTENT"/>
@@ -14,15 +14,14 @@
         <result property="reportType" column="REPORT_TYPE"/>
     </resultMap>
 
-    <select id="selectAllReportedArticle" resultMap="reportedArticleResultMap">
+    <select id="selectAllReportedReply" resultMap="reportedReplyResultMap">
         SELECT
-               A.ARTICLE_ID
+               A.REPLY_ID
              , A.USER_CODE
              , A.REPORT_DATE
              , A.REPORT_CONTENT
              , A.REPORT_REPORTED_COUNT
              , A.REPORT_TYPE
-          FROM REPORTED_ARTICLE A
+          FROM REPORTED_REPLY A
     </select>
-
 </mapper>
