@@ -14,4 +14,6 @@ public interface StudyGroupMapper {
     List<StudyGroupDTO> selectAllLicenseStudyGroup();
 
     List<StudyGroupDTO> selectStudyGroupByStatus(int activationStatus);
+
+    List<StudyGroupDTO> selectStudyGroupsByType(int studyGroupType);
 }

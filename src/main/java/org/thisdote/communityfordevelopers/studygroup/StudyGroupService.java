@@ -31,4 +31,8 @@ public class StudyGroupService {
     List<StudyGroupDTO> findStudyGroupByStatus(int activationStatus) {
         return sqlSession.getMapper(StudyGroupMapper.class).selectStudyGroupByStatus(activationStatus);
     }
+
+    public List<StudyGroupDTO> selectStudyGroupsByType(int studyGroupType) {
+        return sqlSession.getMapper(StudyGroupMapper.class).selectStudyGroupsByType(studyGroupType);
+    }
 }

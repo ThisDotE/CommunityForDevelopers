@@ -56,9 +56,6 @@ public class ArticleTest {
 
     private static Stream<Arguments> getFindArticleByCategory() {
         int category = ArticleCategory.INFO.ordinal();
-//        category.put(ArticleCategory.INFO., 1);
-//        category.put(ArticleCategory.QA.ordinal(), 2);
-//        category.put(ArticleCategory.STUDY.ordinal(), 3);
 
         return Stream.of(Arguments.of(category));
     }
