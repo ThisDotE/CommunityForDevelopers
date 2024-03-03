@@ -3,6 +3,8 @@ package org.thisdote.communityfordevelopers.studygroup;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -38,6 +40,16 @@ public class StudyGroupTests {
         Assertions.assertDoesNotThrow(() -> {
             List<StudyGroupDTO> licenseGroup = studyGroupService.findAllLicenseStudyGroup();
             licenseGroup.forEach(System.out::println);
+        });
+    }
+
+    @DisplayName("활성화 상태 별 스터디 그룹 조회")
+    @ParameterizedTest
+    @ValueSource(ints = 0)
+    void testFindStudyGroupByStatus(int activationStatus) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<StudyGroupDTO> studyGroupList = studyGroupService.findStudyGroupByStatus(activationStatus);
+            studyGroupList.forEach(System.out::println);
         });
     }
 }

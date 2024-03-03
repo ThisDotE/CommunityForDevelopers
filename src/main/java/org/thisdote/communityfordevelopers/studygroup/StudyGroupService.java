@@ -27,4 +27,8 @@ public class StudyGroupService {
     List<StudyGroupDTO> findAllLicenseStudyGroup() {
         return sqlSession.getMapper(StudyGroupMapper.class).selectAllLicenseStudyGroup();
     }
+
+    List<StudyGroupDTO> findStudyGroupByStatus(int activationStatus) {
+        return sqlSession.getMapper(StudyGroupMapper.class).selectStudyGroupByStatus(activationStatus);
+    }
 }

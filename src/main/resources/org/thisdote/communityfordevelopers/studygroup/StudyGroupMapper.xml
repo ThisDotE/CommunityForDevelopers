@@ -51,4 +51,17 @@
         WHERE studygroup_type = '국가 자격증 스터디';
     </select>
 
+    <select id="selectStudyGroupByStatus" resultMap="studyGroupResultMap" parameterType="_int">
+        SELECT
+               A.studygroup_id
+             , A.studygroup_type
+             , A.studygroup_create_date
+             , A.studygroup_member_count
+             , A.studygroup_activation_status
+             , A.studygroup_study_time
+             , A.studygroup_content
+          FROM studygroup A
+         WHERE studygroup_activation_status = #{activationStatus};
+    </select>
+
 </mapper>
