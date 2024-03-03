@@ -3,6 +3,7 @@ package org.thisdote.communityfordevelopers.reply;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thisdote.communityfordevelopers.article.ArticleDTO;
 
 import java.util.List;
 
@@ -18,5 +19,9 @@ public class ReplyService {
 
     public List<ReplyDTO> findAllReply() {
         return sqlSession.getMapper(ReplyMapper.class).selectAllReply();
+    }
+
+    public List<ReplyDTO> selectReplyByUser(int userCode) {
+        return sqlSession.getMapper(ReplyMapper.class).selectReplyByUser(userCode);
     }
 }
