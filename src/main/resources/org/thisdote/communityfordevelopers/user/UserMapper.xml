@@ -18,10 +18,10 @@
     </resultMap>
 
     <resultMap id="studyGroupMemberResultMap" type="org.thisdote.communityfordevelopers.user.UserDTO" extends="userResultMap">
-        <association property="studygroupMemberDTO" javaType="org.thisdote.communityfordevelopers.studygroup_member.StudygroupMemberDTO">
-            <result property="studygroupId" column="STUDYGROUP_ID"/>
-            <result property="studygroupRole" column="STUDYGROUP_ROLE"/>
-            <result property="studygroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>
+        <association property="studyGroupMemberDTO" javaType="org.thisdote.communityfordevelopers.studygroup_member.StudyGroupMemberDTO">
+            <result property="studyGroupId" column="STUDYGROUP_ID"/>
+            <result property="studyGroupRole" column="STUDYGROUP_ROLE"/>
+            <result property="studyGroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>
             <result property="userCode" column="USER_CODE"/>
         </association>
     </resultMap>
