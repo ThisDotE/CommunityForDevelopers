@@ -1,9 +1,6 @@
 package org.thisdote.communityfordevelopers.article;
 
 import org.thisdote.communityfordevelopers.reply.ReplyDTO;
-import org.thisdote.communityfordevelopers.user.UserDTO;
-
-import java.util.List;
 
 public class ArticleDTO {
 

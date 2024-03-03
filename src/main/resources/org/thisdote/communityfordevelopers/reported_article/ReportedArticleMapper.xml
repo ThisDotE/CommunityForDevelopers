@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="org.thisdote.communityfordevelopers.reported_article.ReportedArticleMapper">
 
     <resultMap id="reportedArticleResultMap" type="org.thisdote.communityfordevelopers.reported_article.ReportedArticleDTO">
@@ -15,12 +16,13 @@
 
     <select id="selectAllReportedArticle" resultMap="reportedArticleResultMap">
         SELECT
-        A.ARTICLE_ID
-        , A.USER_CODE
-        , A.REPORT_DATE
-        , A.REPORT_CONTENT
-        , A.REPORT_REPORTED_COUNT
-        , A.REPORT_TYPE
-        FROM REPORTED_ARTICLE A
+               A.ARTICLE_ID
+             , A.USER_CODE
+             , A.REPORT_DATE
+             , A.REPORT_CONTENT
+             , A.REPORT_REPORTED_COUNT
+             , A.REPORT_TYPE
+          FROM REPORTED_ARTICLE A
     </select>
+
 </mapper>

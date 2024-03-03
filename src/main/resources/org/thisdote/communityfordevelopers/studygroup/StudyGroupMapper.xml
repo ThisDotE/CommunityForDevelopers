@@ -2,7 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="org.thisdote.communityfordevelopers.studygroup.StudyGroupMapper">
+
     <resultMap id="studyGroupResultMap" type="org.thisdote.communityfordevelopers.studygroup.StudyGroupDTO">
         <id property="studyGroupId" column="studygroup_id"/>
         <result property="studyGroupType" column="studygroup_type"/>
@@ -15,66 +17,66 @@
     
     <select id="selectAllStudyGroup" resultMap="studyGroupResultMap">
         SELECT
-               A.studygroup_id
-             , A.studygroup_type
-             , A.studygroup_create_date
-             , A.studygroup_member_count
-             , A.studygroup_activation_status
-             , A.studygroup_study_time
-             , A.studygroup_content
-          FROM studygroup A;
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+          FROM STUDYGROUP A;
     </select>
 
     <select id="selectAllEnglishStudyGroup" resultMap="studyGroupResultMap">
         SELECT
-        studygroup_id
-        , studygroup_type
-        , studygroup_create_date
-        , studygroup_member_count
-        , studygroup_activation_status
-        , studygroup_study_time
-        , studygroup_content
-        FROM studygroup
-        WHERE studygroup_type = '영어 시험 스터디';
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+          FROM STUDYGROUP A
+         WHERE STUDYGROUP_TYPE = '영어 시험 스터디';
     </select>
 
     <select id="selectAllLicenseStudyGroup" resultMap="studyGroupResultMap">
         SELECT
-        studygroup_id
-        , studygroup_type
-        , studygroup_create_date
-        , studygroup_member_count
-        , studygroup_activation_status
-        , studygroup_study_time
-        , studygroup_content
-        FROM studygroup
-        WHERE studygroup_type = '국가 자격증 스터디';
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+          FROM STUDYGROUP A
+         WHERE STUDYGROUP_TYPE = '국가 자격증 스터디';
     </select>
 
     <select id="selectStudyGroupByStatus" resultMap="studyGroupResultMap" parameterType="_int">
         SELECT
-               A.studygroup_id
-             , A.studygroup_type
-             , A.studygroup_create_date
-             , A.studygroup_member_count
-             , A.studygroup_activation_status
-             , A.studygroup_study_time
-             , A.studygroup_content
-          FROM studygroup A
-         WHERE studygroup_activation_status = #{activationStatus};
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+          FROM STUDYGROUP A
+         WHERE STUDYGROUP_ACTIVATION_STATUS = #{activationStatus};
     </select>
 
     <select id="selectStudyGroupsByType" resultMap="studyGroupResultMap" parameterType="_int">
         SELECT
-        studygroup_id
-        , studygroup_type
-        , studygroup_create_date
-        , studygroup_member_count
-        , studygroup_activation_status
-        , studygroup_study_time
-        , studygroup_content
-        FROM studygroup
-        WHERE studygroup_type = #{studygroup_type};
+               STUDYGROUP_ID
+             , STUDYGROUP_TYPE
+             , STUDYGROUP_CREATE_DATE
+             , STUDYGROUP_MEMBER_COUNT
+             , STUDYGROUP_ACTIVATION_STATUS
+             , STUDYGROUP_STUDY_TIME
+             , STUDYGROUP_CONTENT
+          FROM STUDYGROUP
+         WHERE STUDYGROUP_TYPE = #{studygroup_type};
     </select>
 
 </mapper>
