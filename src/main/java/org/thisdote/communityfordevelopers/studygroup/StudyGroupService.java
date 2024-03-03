@@ -27,4 +27,8 @@ public class StudyGroupService {
     List<StudyGroupDTO> findAllLicenseStudyGroup() {
         return sqlSession.getMapper(StudyGroupMapper.class).selectAllLicenseStudyGroup();
     }
+
+    public List<StudyGroupDTO> selectStudyGroupsByType(int studyGroupType) {
+        return sqlSession.getMapper(StudyGroupMapper.class).selectStudyGroupsByType(studyGroupType);
+    }
 }
