@@ -3,20 +3,6 @@ package org.thisdote.communityfordevelopers.reply;
 import java.util.Date;
 
 public class ReplyDTO {
-    /*reply_id,
-    reply_report_status,
-    reply_content,
-    reply_create_date,
-    reply_last_update_date,
-    reply_like_count,
-    user_code*/
-    /*1,
-    0,
-    '음하하하하하하하하하하하핫!!!',
-    '2017-03-04',
-    '2017-04-15',
-    6,
-    1*/
 
     private int replyId;                // pk..
     private int replyReportStatus;

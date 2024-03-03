@@ -1,8 +1,5 @@
 package org.thisdote.communityfordevelopers.blacklist;
 
-import org.apache.ibatis.annotations.Mapper;
-
-
 public class BlackListDTO {
     private int blackListId;
     private int blackListStatus;

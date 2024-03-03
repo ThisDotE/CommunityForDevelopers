@@ -1,6 +1,7 @@
 package org.thisdote.communityfordevelopers.user;
 
 import org.apache.ibatis.annotations.Mapper;
+
 import java.util.List;
 
 @Mapper

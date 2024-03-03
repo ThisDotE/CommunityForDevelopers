@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="org.thisdote.communityfordevelopers.inquiry.InquiryMapper">
 
     <resultMap id="inquiryResultMap" type="org.thisdote.communityfordevelopers.inquiry.InquiryDTO">
@@ -41,4 +42,5 @@
           FROM INQUIRY A
          WHERE USER_CODE = #{userCode}
     </select>
+
 </mapper>

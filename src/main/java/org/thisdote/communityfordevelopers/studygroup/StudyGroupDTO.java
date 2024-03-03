@@ -3,20 +3,6 @@ package org.thisdote.communityfordevelopers.studygroup;
 import java.util.Date;
 
 public class StudyGroupDTO {
-    /*studygroup_id,
-    studygroup_type,
-    studygroup_create_date,
-    studygroup_member_count,
-    studygroup_activation_status,
-    studygroup_study_time,
-    studygroup_content*/
-    /*1,
-    '영어 시험 스터디',
-    '2011-08-20',
-    54,
-    1,
-    '2011-08-27',
-    '다다음주 IElTS 시험 전주에 Experts 9단계를 위한 개인 꿀팁들 공유하실 분들 모집합니다.'*/
 
     private int studyGroupId;
     private String studyGroupType;

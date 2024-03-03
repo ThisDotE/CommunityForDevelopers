@@ -9,8 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.inquiry.InquiryDTO;
-import org.thisdote.communityfordevelopers.user.UserDTO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +59,7 @@ public class ArticleTest {
     }
     @DisplayName("카테고리 별 게시글 조회")
     @ParameterizedTest
-    @ValueSource(ints = 1)
+    @MethodSource("getFindArticleByCategory")
     void testFindArticleByCategory(int category) {
         Assertions.assertDoesNotThrow(() -> {
             List<ArticleDTO> articleByCategory = articleService.selectArticleByCategory(category);
@@ -80,11 +78,8 @@ public class ArticleTest {
     }
 
     private static Stream<Arguments> getSearchCriteria() {
-
         Map<String, Object> criteria = new HashMap<>();
-//        criteria.put(SearchCriteriaEnum.CATEGORY.toString(), "질문");
         criteria.put(SearchCriteriaEnum.TITLE.toString(), "점심");
-//        criteria.put(SearchCriteriaEnum.WRITER.toString(), 5);
 
         return Stream.of(Arguments.of(criteria));
     }

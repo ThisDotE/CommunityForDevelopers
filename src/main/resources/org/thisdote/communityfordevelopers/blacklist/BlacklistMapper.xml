@@ -4,6 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.thisdote.communityfordevelopers.blacklist.BlackListMapper">
+
     <resultMap id="blackListResultMap" type="org.thisdote.communityfordevelopers.blacklist.BlackListDTO">
         <id property="blackListId" column="BLACKLIST_ID"/>
         <result property="blackListStatus" column="BLACKLIST_STATUS"/>
@@ -13,10 +14,11 @@
 
     <select id="selectAllBlackList" resultMap="blackListResultMap">
         SELECT
-                BLACKLIST_ID
-              , BLACKLIST_STATUS
-              , USER_CODE
-              , BLACKLIST_COUNT
-          FROM BLACKLIST
+               A.BLACKLIST_ID
+             , A.BLACKLIST_STATUS
+             , A.USER_CODE
+             , A.BLACKLIST_COUNT
+          FROM BLACKLIST A
     </select>
+
 </mapper>
