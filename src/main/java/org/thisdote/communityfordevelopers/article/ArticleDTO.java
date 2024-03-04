@@ -7,7 +7,7 @@ public class ArticleDTO {
     private int articleId;
     private String articleTitle;
     private String articleContent;
-    private String articleCategory;
+    private int articleCategory;
     private String articleCreateDate;
     private String articleLastUpdateDate;
     private int articleViewCount;
@@ -27,7 +27,7 @@ public class ArticleDTO {
     public ArticleDTO() {
     }
 
-    public ArticleDTO(int articleId, String articleTitle, String articleContent, String articleCategory, String articleCreateDate, String articleLastUpdateDate, int articleViewCount, int articleLikeCount, int articleReplyCount, int articleReportStatus, int studygroupMemberMaxCount, String studygroupRecruitmentDeadline, String articleQuestionCategory, int userCode, int studygroupId, int studygroupCurrentMemberCount, int studygroupPendingMemberCount, ReplyDTO replyDTOList) {
+    public ArticleDTO(int articleId, String articleTitle, String articleContent, int articleCategory, String articleCreateDate, String articleLastUpdateDate, int articleViewCount, int articleLikeCount, int articleReplyCount, int articleReportStatus, int studygroupMemberMaxCount, String studygroupRecruitmentDeadline, String articleQuestionCategory, int userCode, int studygroupId, int studygroupCurrentMemberCount, int studygroupPendingMemberCount, ReplyDTO replyDTOList) {
         this.articleId = articleId;
         this.articleTitle = articleTitle;
         this.articleContent = articleContent;
@@ -85,11 +85,11 @@ public class ArticleDTO {
         this.articleContent = articleContent;
     }
 
-    public String getArticleCategory() {
+    public int getArticleCategory() {
         return articleCategory;
     }
 
-    public void setArticleCategory(String articleCategory) {
+    public void setArticleCategory(int articleCategory) {
         this.articleCategory = articleCategory;
     }
 
@@ -203,7 +203,7 @@ public class ArticleDTO {
                 "articleId=" + articleId +
                 ", articleTitle='" + articleTitle + '\'' +
                 ", articleContent='" + articleContent + '\'' +
-                ", articleCategory='" + articleCategory + '\'' +
+                ", articleCategory=" + articleCategory +
                 ", articleCreateDate='" + articleCreateDate + '\'' +
                 ", articleLastUpdateDate='" + articleLastUpdateDate + '\'' +
                 ", articleViewCount=" + articleViewCount +

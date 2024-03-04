@@ -84,6 +84,7 @@
           FROM ARTICLE A
          WHERE USER_CODE = #{userCode}
     </select>
+
     <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="_int">
         SELECT
                A.ARTICLE_ID

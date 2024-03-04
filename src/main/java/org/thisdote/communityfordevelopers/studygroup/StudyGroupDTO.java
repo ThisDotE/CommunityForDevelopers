@@ -5,7 +5,7 @@ import java.util.Date;
 public class StudyGroupDTO {
 
     private int studyGroupId;
-    private String studyGroupType;
+    private int studyGroupType;
     private Date studyGroupCreatedDate;
     private int studyGroupMemberCount;
     private int studyGroupActivationStatus;
@@ -16,7 +16,7 @@ public class StudyGroupDTO {
     }
 
     public StudyGroupDTO(
-            String studyGroupType,
+            int studyGroupType,
             int studyGroupId,
             Date studyGroupCreatedDate,
             int studyGroupMemberCount,
@@ -33,11 +33,11 @@ public class StudyGroupDTO {
         this.studyGroupContent = studyGroupContent;
     }
 
-    public String getStudyGroupType() {
+    public int getStudyGroupType() {
         return studyGroupType;
     }
 
-    public void setStudyGroupType(String studyGroupType) {
+    public void setStudyGroupType(int studyGroupType) {
         this.studyGroupType = studyGroupType;
     }
 
@@ -92,8 +92,8 @@ public class StudyGroupDTO {
     @Override
     public String toString() {
         return "StudyGroupDTO{" +
-                "studyGroupType='" + studyGroupType + '\'' +
-                ", studyGroupId=" + studyGroupId +
+                "studyGroupId=" + studyGroupId +
+                ", studyGroupType=" + studyGroupType +
                 ", studyGroupCreatedDate=" + studyGroupCreatedDate +
                 ", studyGroupMemberCount=" + studyGroupMemberCount +
                 ", studyGroupActivationStatus=" + studyGroupActivationStatus +
