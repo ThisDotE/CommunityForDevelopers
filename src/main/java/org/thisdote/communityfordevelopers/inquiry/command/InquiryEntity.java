@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="inquiry")
-public class Inquiry {
+public class InquiryEntity {
     @Id
     @Column(name="inquiry_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,10 +30,10 @@ public class Inquiry {
     @Column(name="inquiry_status")
     private int inquiryStatus;
 
-    public Inquiry() {
+    public InquiryEntity() {
     }
 
-    public Inquiry(int inquiryId, int inquiryCategory, String inquiryTitle, String inquiryContent, Date inquiryCreateDate, Date inquiryLastUpdateDate, int inquiryStatus) {
+    public InquiryEntity(int inquiryId, int inquiryCategory, String inquiryTitle, String inquiryContent, Date inquiryCreateDate, Date inquiryLastUpdateDate, int inquiryStatus) {
         this.inquiryId = inquiryId;
         this.inquiryCategory = inquiryCategory;
         this.inquiryTitle = inquiryTitle;
