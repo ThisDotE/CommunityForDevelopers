@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.article.query;
+package org.thisdote.communityfordevelopers.article.dto;
 
 import org.thisdote.communityfordevelopers.reply.query.ReplyDTO;
 
