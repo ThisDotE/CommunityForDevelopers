@@ -3,7 +3,7 @@ package org.thisdote.communityfordevelopers.inquiry.query;
 public class InquiryDTO {
 
     private int inquiryId;
-    private String inquiryCategory;
+    private int inquiryCategory;
     private String inquiryTitle;
     private String inquiryContent;
     private String inquiryCreateDate;
@@ -14,7 +14,7 @@ public class InquiryDTO {
     public InquiryDTO() {
     }
 
-    public InquiryDTO(int inquiryId, String inquiryCategory, String inquiryTitle, String inquiryContent, String inquiryCreateDate, String inquiryLastUpdateDate, int inquiryStatus, int userCode) {
+    public InquiryDTO(int inquiryId, int inquiryCategory, String inquiryTitle, String inquiryContent, String inquiryCreateDate, String inquiryLastUpdateDate, int inquiryStatus, int userCode) {
         this.inquiryId = inquiryId;
         this.inquiryCategory = inquiryCategory;
         this.inquiryTitle = inquiryTitle;
@@ -33,11 +33,11 @@ public class InquiryDTO {
         this.inquiryId = inquiryId;
     }
 
-    public String getInquiryCategory() {
+    public int getInquiryCategory() {
         return inquiryCategory;
     }
 
-    public void setInquiryCategory(String inquiryCategory) {
+    public void setInquiryCategory(int inquiryCategory) {
         this.inquiryCategory = inquiryCategory;
     }
 
@@ -93,7 +93,7 @@ public class InquiryDTO {
     public String toString() {
         return "InquiryDTO{" +
                 "inquiryId=" + inquiryId +
-                ", inquiryCategory='" + inquiryCategory + '\'' +
+                ", inquiryCategory=" + inquiryCategory +
                 ", inquiryTitle='" + inquiryTitle + '\'' +
                 ", inquiryContent='" + inquiryContent + '\'' +
                 ", inquiryCreateDate='" + inquiryCreateDate + '\'' +
