@@ -1,6 +1,7 @@
 package org.thisdote.communityfordevelopers.article.command;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.thisdote.communityfordevelopers.article.dto.ArticleDTO;
@@ -10,6 +11,7 @@ public class ArticleService1 {
     private final ModelMapper mapper;
     private final ArticleRepository articleRepository;
 
+    @Autowired
     public ArticleService1(ModelMapper mapper, ArticleRepository articleRepository) {
         this.mapper = mapper;
         this.articleRepository = articleRepository;
@@ -18,5 +20,11 @@ public class ArticleService1 {
     @Transactional
     public void registArticle(ArticleDTO newArticle){
         articleRepository.save(mapper.map(newArticle, ArticleEntity.class));
+    }
+
+    @Transactional
+    public void modifyArticle(ArticleDTO articleDTO, int articleId) {
+        ArticleEntity article = articleRepository.findById(articleId).get();
+        article.setArticleContent(articleDTO.getArticleContent());
     }
 }

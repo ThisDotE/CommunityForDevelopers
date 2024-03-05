@@ -3,6 +3,8 @@ package org.thisdote.communityfordevelopers.article.command;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.thisdote.communityfordevelopers.article.dto.ArticleDTO;
@@ -39,5 +41,16 @@ public class ArticleTest {
         article.setStudygroupPendingMemberCount(6);
 
         articleService1.registArticle(article);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = 3)
+    public void 게시글_내용_수정(int articleId){
+        String modifyContent = "진짜 아오 이게 왜 삭제 돼?";
+
+        ArticleDTO articleDTO = new ArticleDTO();
+        articleDTO.setArticleContent(modifyContent);
+
+        articleService1.modifyArticle(articleDTO, articleId);
     }
 }
