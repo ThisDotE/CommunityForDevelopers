@@ -7,16 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.thisdote.communityfordevelopers.blacklist.command.service.BlackListCommandService;
 import org.thisdote.communityfordevelopers.blacklist.dto.BlackListDTO;
+import org.thisdote.communityfordevelopers.blacklist.dto.BlackListDTO;
 
 import java.util.List;
 
 @SpringBootTest
-public class BlackListEntityTest {
+public class BlackListTest {
 
     @Autowired
     private BlackListService blackListService;
 
-    @DisplayName("BlackListEntity Test")
+    @DisplayName("BlackList Test")
     @Test
     void testFindBlackList() {
         Assertions.assertDoesNotThrow(
