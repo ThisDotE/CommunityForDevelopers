@@ -35,9 +35,12 @@ public class Reply {
     @Column(name = "reply_like_count")
     private int replyLikeCount;
 
+    @Column(name = "reply_delete_status")
+    private int replyDeleteStatus;
+
     @Column(name = "user_code")
     private int userCode;
 
-    @Column(name = "artcle_id")
+    @Column(name = "article_id")
     private int articleId;
 }
