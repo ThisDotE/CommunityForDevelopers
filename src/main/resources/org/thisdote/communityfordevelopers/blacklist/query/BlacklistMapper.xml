@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.blacklist.query.BlackListMapper">
 
-    <resultMap id="blackListResultMap" type="org.thisdote.communityfordevelopers.blacklist.query.BlackListDTO">
+    <resultMap id="blackListResultMap" type="org.thisdote.communityfordevelopers.blacklist.dto.BlackListDTO">
         <id property="blackListId" column="BLACKLIST_ID"/>
         <result property="blackListStatus" column="BLACKLIST_STATUS"/>
         <result property="userCode" column="USER_CODE"/>
