@@ -29,4 +29,9 @@ public class InquiryCommandService {
         inquiryRepository.save(inquiryEntity);
     }
 
+    @Transactional
+    public void deleteInquiry(int inquiryId) {
+        inquiryRepository.deleteById(inquiryId);
+    }
+
 }
