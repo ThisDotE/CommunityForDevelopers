@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.reported_article;
+package org.thisdote.communityfordevelopers.reported_article.query;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -9,6 +9,7 @@ import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticl
 import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleService;
 import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleDTO;
 import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleService;
+import org.thisdote.communityfordevelopers.reported_article.dto.ReportedArticleDTO;
 
 import java.util.List;
 
@@ -20,11 +21,11 @@ public class ReportedArticleTest {
 
     @DisplayName("Reported Article Test")
     @Test
-    void testFindAllMenus() {
+    void testFindAllReportedArticle() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<ReportedArticleDTO> menus = reportedArticleService.selectAllReportedArticle();
-                    menus.forEach(System.out::println);
+                    List<ReportedArticleDTO> reportedArticles = reportedArticleService.selectAllReportedArticle();
+                    reportedArticles.forEach(System.out::println);
                 }
         );
     }

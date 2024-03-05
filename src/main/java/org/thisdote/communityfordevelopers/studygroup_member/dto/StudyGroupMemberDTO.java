@@ -1,8 +1,9 @@
-package org.thisdote.communityfordevelopers.studygroup_member.query;
+package org.thisdote.communityfordevelopers.studygroup_member.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class StudyGroupMemberDTO {
+    private int studyGroupMemberId;
     private int studyGroupId;
     private int studyGroupRole;     // 0 - 스터디원, 1 - 스터디장
     private Date studyGroupRegistDate;
@@ -11,11 +12,20 @@ public class StudyGroupMemberDTO {
     public StudyGroupMemberDTO() {
     }
 
-    public StudyGroupMemberDTO(int studyGroupId, int studyGroupRole, Date studyGroupRegistDate, int userCode) {
+    public StudyGroupMemberDTO(int studyGroupMemberId, int studyGroupId, int studyGroupRole, Date studyGroupRegistDate, int userCode) {
+        this.studyGroupMemberId = studyGroupMemberId;
         this.studyGroupId = studyGroupId;
         this.studyGroupRole = studyGroupRole;
         this.studyGroupRegistDate = studyGroupRegistDate;
         this.userCode = userCode;
+    }
+
+    public int getStudyGroupMemberId() {
+        return studyGroupMemberId;
+    }
+
+    public void setStudyGroupMemberId(int studyGroupMemberId) {
+        this.studyGroupMemberId = studyGroupMemberId;
     }
 
     public int getStudyGroupId() {
@@ -53,7 +63,8 @@ public class StudyGroupMemberDTO {
     @Override
     public String toString() {
         return "StudyGroupMemberDTO{" +
-                "studyGroupId=" + studyGroupId +
+                "studyGroupMemberId=" + studyGroupMemberId +
+                ", studyGroupId=" + studyGroupId +
                 ", studyGroupRole=" + studyGroupRole +
                 ", studyGroupRegistDate=" + studyGroupRegistDate +
                 ", userCode=" + userCode +

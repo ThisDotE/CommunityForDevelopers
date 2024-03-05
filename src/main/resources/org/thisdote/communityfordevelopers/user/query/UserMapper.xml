@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.user.query.UserMapper">
 
-    <resultMap id="userResultMap" type="org.thisdote.communityfordevelopers.user.query.UserDTO">
+    <resultMap id="userResultMap" type="org.thisdote.communityfordevelopers.user.dto.UserDTO">
         <id property="userCode" column="USER_CODE"/>
         <result property="userId" column="USER_ID"/>
         <result property="userPassword" column="USER_PASSWORD"/>
@@ -18,8 +18,8 @@
         <result property="userGrade" column="USER_GRADE"/>
     </resultMap>
 
-    <resultMap id="studyGroupMemberResultMap" type="org.thisdote.communityfordevelopers.user.query.UserDTO" extends="userResultMap">
-        <association property="studyGroupMemberDTO" javaType="org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberDTO">
+    <resultMap id="studyGroupMemberResultMap" type="org.thisdote.communityfordevelopers.user.dto.UserDTO" extends="userResultMap">
+        <association property="studyGroupMemberDTO" javaType="org.thisdote.communityfordevelopers.studygroup_member.dto.StudyGroupMemberDTO">
             <result property="studyGroupId" column="STUDYGROUP_ID"/>
             <result property="studyGroupRole" column="STUDYGROUP_ROLE"/>
             <result property="studyGroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>

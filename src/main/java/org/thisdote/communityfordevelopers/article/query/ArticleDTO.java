@@ -1,6 +1,6 @@
 package org.thisdote.communityfordevelopers.article.query;
 
-import org.thisdote.communityfordevelopers.reply.query.ReplyDTO;
+import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
 public class ArticleDTO {
 
