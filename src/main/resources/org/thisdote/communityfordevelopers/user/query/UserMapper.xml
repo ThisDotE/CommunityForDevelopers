@@ -19,7 +19,7 @@
     </resultMap>
 
     <resultMap id="studyGroupMemberResultMap" type="org.thisdote.communityfordevelopers.user.dto.UserDTO" extends="userResultMap">
-        <association property="studyGroupMemberDTO" javaType="org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberDTO">
+        <association property="studyGroupMemberDTO" javaType="org.thisdote.communityfordevelopers.studygroup_member.dto.StudyGroupMemberDTO">
             <result property="studyGroupId" column="STUDYGROUP_ID"/>
             <result property="studyGroupRole" column="STUDYGROUP_ROLE"/>
             <result property="studyGroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>
