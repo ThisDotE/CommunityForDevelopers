@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.user.query;
+package org.thisdote.communityfordevelopers.user.dto;
 
 import org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberDTO;
 

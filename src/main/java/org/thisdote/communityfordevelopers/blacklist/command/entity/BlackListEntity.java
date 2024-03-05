@@ -1,15 +1,29 @@
-package org.thisdote.communityfordevelopers.blacklist.query;
+package org.thisdote.communityfordevelopers.blacklist.command.entity;
 
-public class BlackListDTO {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "blacklist")
+public class BlackListEntity {
+
+    @Id
+    @Column(name = "blacklist_id")
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int blackListId;
+
+    @Column(name = "blacklist_status")
     private int blackListStatus;
+
+    @Column(name = "user_code")
     private int userCode;
+
+    @Column(name = "blacklist_count")
     private int blackListCount;
 
-    public BlackListDTO() {
+    public BlackListEntity() {
     }
 
-    public BlackListDTO(int blackListId, int blackListStatus, int userCode, int blackListCount) {
+    public BlackListEntity(int blackListId, int blackListStatus, int userCode, int blackListCount) {
         this.blackListId = blackListId;
         this.blackListStatus = blackListStatus;
         this.userCode = userCode;
@@ -20,28 +34,28 @@ public class BlackListDTO {
         return blackListId;
     }
 
-    public void setBlackListId(int blackListId) {
-        this.blackListId = blackListId;
-    }
-
     public int getBlackListStatus() {
         return blackListStatus;
-    }
-
-    public void setBlackListStatus(int blackListStatus) {
-        this.blackListStatus = blackListStatus;
     }
 
     public int getUserCode() {
         return userCode;
     }
 
-    public void setUserCode(int userCode) {
-        this.userCode = userCode;
-    }
-
     public int getBlackListCount() {
         return blackListCount;
+    }
+
+    public void setBlackListId(int blackListId) {
+        this.blackListId = blackListId;
+    }
+
+    public void setBlackListStatus(int blackListStatus) {
+        this.blackListStatus = blackListStatus;
+    }
+
+    public void setUserCode(int userCode) {
+        this.userCode = userCode;
     }
 
     public void setBlackListCount(int blackListCount) {
@@ -50,7 +64,7 @@ public class BlackListDTO {
 
     @Override
     public String toString() {
-        return "BlackListDTO{" +
+        return "BlackListEntity{" +
                 "blackListId=" + blackListId +
                 ", blackListStatus=" + blackListStatus +
                 ", userCode=" + userCode +
