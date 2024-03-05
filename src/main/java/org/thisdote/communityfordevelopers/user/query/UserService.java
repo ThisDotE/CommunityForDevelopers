@@ -4,6 +4,7 @@ package org.thisdote.communityfordevelopers.user.query;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thisdote.communityfordevelopers.user.dto.UserDTO;
 
 import java.util.List;
 
