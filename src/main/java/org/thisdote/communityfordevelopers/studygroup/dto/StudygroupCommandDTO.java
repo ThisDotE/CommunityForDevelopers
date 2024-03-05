@@ -15,4 +15,5 @@ public class StudygroupCommandDTO {
     private int studygroupActivationStatus;
     private java.util.Date studygroupStudyTime;
     private String studygroupContent;
+    private int studygroupResignStatus;
 }

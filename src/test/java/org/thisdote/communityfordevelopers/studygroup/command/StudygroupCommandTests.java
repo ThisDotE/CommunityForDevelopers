@@ -21,12 +21,14 @@ public class StudygroupCommandTests {
     @Test
     public void testInsertStudygroup() {
         StudygroupCommandDTO studygroupCommandDTO = new StudygroupCommandDTO();
+        studygroupCommandDTO.setStudygroupId(5);
         studygroupCommandDTO.setStudygroupType(1);
         studygroupCommandDTO.setStudygroupCreateDate(new Date());
         studygroupCommandDTO.setStudygroupMemberCount(30);
         studygroupCommandDTO.setStudygroupActivationStatus(1);
         studygroupCommandDTO.setStudygroupStudyTime(new Date());
         studygroupCommandDTO.setStudygroupContent("집에가자");
+        studygroupCommandDTO.setStudygroupResignStatus(0);
 
         studygroupCommandService.registStudygroup(studygroupCommandDTO);
     }

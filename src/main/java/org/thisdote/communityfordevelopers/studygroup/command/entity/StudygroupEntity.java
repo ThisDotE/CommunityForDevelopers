@@ -34,4 +34,7 @@ public class StudygroupEntity {
 
     @Column(name="studygroup_content")
     private String studygroupContent;
+
+    @Column(name="studygroup_resign_status")
+    private int studygroupResignStatus;
 }
