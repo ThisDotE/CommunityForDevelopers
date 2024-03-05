@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.blacklist.query;
+package org.thisdote.communityfordevelopers.blacklist.dto;
 
 public class BlackListDTO {
     private int blackListId;

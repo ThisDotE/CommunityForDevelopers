@@ -3,6 +3,7 @@ package org.thisdote.communityfordevelopers.reply.query;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
 import java.util.List;
 

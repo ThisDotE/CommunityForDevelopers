@@ -7,8 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.reply.query.ReplyDTO;
-import org.thisdote.communityfordevelopers.reply.query.ReplyService;
+import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
 import java.util.List;
 
