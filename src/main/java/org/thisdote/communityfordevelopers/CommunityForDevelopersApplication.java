@@ -16,4 +16,8 @@ public class CommunityForDevelopersApplication {
         return new ModelMapper();
     }
 
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    };
 }
