@@ -6,7 +6,8 @@
 <mapper namespace="org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberMapper">
 
     <resultMap id="memberResultMap" type="org.thisdote.communityfordevelopers.studygroup_member.dto.StudyGroupMemberDTO">
-        <id property="studyGroupId" column="STUDYGROUP_ID"/>
+        <id property="studyGroupMemberId" column="STUDYGROUP_MEMBER_ID"/>
+        <result property="studyGroupId" column="STUDYGROUP_ID"/>
         <result property="studyGroupRole" column="STUDYGROUP_ROLE"/>
         <result property="studyGroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>
         <result property="userCode" column="USER_CODE"/>
@@ -14,7 +15,8 @@
 
     <select id="selectAllStudyGroupMember" resultMap="memberResultMap">
         SELECT
-               A.STUDYGROUP_ID
+               A.STUDYGROUP_MEMBER_ID
+             , A.STUDYGROUP_ID
              , A.STUDYGROUP_ROLE
              , A.STUDYGROUP_REGIST_DATE
              , A.USER_CODE
@@ -23,7 +25,8 @@
 
     <select id="selectAllStudyGroupLeader" resultMap="memberResultMap">
         SELECT
-               A.STUDYGROUP_ID
+               A.STUDYGROUP_MEMBER_ID
+             , A.STUDYGROUP_ID
              , A.STUDYGROUP_ROLE
              , A.STUDYGROUP_REGIST_DATE
              , A.USER_CODE
@@ -33,7 +36,8 @@
 
     <select id="selectAllStudyGroupFollower" resultMap="memberResultMap">
         SELECT
-               A.STUDYGROUP_ID
+               A.STUDYGROUP_MEMBER_ID
+             , A.STUDYGROUP_ID
              , A.STUDYGROUP_ROLE
              , A.STUDYGROUP_REGIST_DATE
              , A.USER_CODE

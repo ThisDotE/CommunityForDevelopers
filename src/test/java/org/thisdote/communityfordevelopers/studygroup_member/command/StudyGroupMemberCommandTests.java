@@ -3,6 +3,8 @@ package org.thisdote.communityfordevelopers.studygroup_member.command;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.thisdote.communityfordevelopers.studygroup_member.command.service.StudyGroupMemberCommandService;
@@ -48,6 +50,15 @@ public class StudyGroupMemberCommandTests {
                 studyGroupMembers.get(studyGroupMembers.size() - 1).getUserCode(),
                 newStudyGroupMember.getUserCode()
         );
-
     }
+
+//    @DisplayName("Update member role of study group member test")
+//    @ParameterizedTest
+//    @ValueSource(ints = 1)
+
+
+
+//    @DisplayName("Delete Study Group Member Test")
+//    @ParameterizedTest
+//    @ValueSource(ints = 10)
 }

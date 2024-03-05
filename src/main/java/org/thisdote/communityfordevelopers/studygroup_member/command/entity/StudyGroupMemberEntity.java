@@ -7,10 +7,12 @@ import java.util.Date;
 
 @Entity
 @Table(name = "studygroup_member")
-@IdClass(StudyGroupMemberIdClass.class)
 public class StudyGroupMemberEntity implements Serializable {
 
     @Id
+    @Column(name = "studygroup_member_id")
+    private int studyGroupMemberId;
+
     @Column(name = "studygroup_id")
     private int studyGroupId;
 
@@ -20,18 +22,26 @@ public class StudyGroupMemberEntity implements Serializable {
     @Column(name = "studygroup_regist_date")
     private Date studyGroupRegistDate;
 
-    @Id
     @Column(name = "user_code")
     private int userCode;
 
     public StudyGroupMemberEntity() {
     }
 
-    public StudyGroupMemberEntity(int studyGroupId, int studyGroupRole, Date studyGroupRegistDate, int userCode) {
+    public StudyGroupMemberEntity(int studyGroupMemberId, int studyGroupId, int studyGroupRole, Date studyGroupRegistDate, int userCode) {
+        this.studyGroupMemberId = studyGroupMemberId;
         this.studyGroupId = studyGroupId;
         this.studyGroupRole = studyGroupRole;
         this.studyGroupRegistDate = studyGroupRegistDate;
         this.userCode = userCode;
+    }
+
+    public int getStudyGroupMemberId() {
+        return studyGroupMemberId;
+    }
+
+    public void setStudyGroupMemberId(int studyGroupMemberId) {
+        this.studyGroupMemberId = studyGroupMemberId;
     }
 
     public int getStudyGroupId() {
@@ -69,7 +79,8 @@ public class StudyGroupMemberEntity implements Serializable {
     @Override
     public String toString() {
         return "StudyGroupMemberEntity{" +
-                "studyGroupId=" + studyGroupId +
+                "studyGroupMemberId=" + studyGroupMemberId +
+                ", studyGroupId=" + studyGroupId +
                 ", studyGroupRole=" + studyGroupRole +
                 ", studyGroupRegistDate=" + studyGroupRegistDate +
                 ", userCode=" + userCode +
