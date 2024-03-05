@@ -5,8 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyDTO;
-import org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyService;
+import org.thisdote.communityfordevelopers.reported_reply.DTO.ReportedReplyDTO;
 
 import java.util.List;
 

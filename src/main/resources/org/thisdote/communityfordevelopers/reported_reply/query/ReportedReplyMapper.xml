@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyMapper">
 
-    <resultMap id="reportedReplyResultMap" type="org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyDTO">
+    <resultMap id="reportedReplyResultMap" type="org.thisdote.communityfordevelopers.reported_reply.DTO.ReportedReplyDTO">
         <id property="replyId" column="REPLY_ID"/>
         <result property="userCode" column="USER_CODE"/>
         <result property="reportDate" column="REPORT_DATE"/>

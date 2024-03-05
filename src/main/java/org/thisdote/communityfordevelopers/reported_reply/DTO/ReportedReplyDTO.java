@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.reported_reply.query;
+package org.thisdote.communityfordevelopers.reported_reply.DTO;
 
 import java.util.Date;
 
@@ -21,6 +21,30 @@ public class ReportedReplyDTO {
         this.reportDate = reportDate;
         this.reportContent = reportContent;
         this.reportReportedCount = reportReportedCount;
+        this.reportType = reportType;
+    }
+
+    public void setReplyId(int replyId) {
+        this.replyId = replyId;
+    }
+
+    public void setUserCode(int userCode) {
+        this.userCode = userCode;
+    }
+
+    public void setReportDate(Date reportDate) {
+        this.reportDate = reportDate;
+    }
+
+    public void setReportContent(String reportContent) {
+        this.reportContent = reportContent;
+    }
+
+    public void setReportReportedCount(int reportReportedCount) {
+        this.reportReportedCount = reportReportedCount;
+    }
+
+    public void setReportType(int reportType) {
         this.reportType = reportType;
     }
 
