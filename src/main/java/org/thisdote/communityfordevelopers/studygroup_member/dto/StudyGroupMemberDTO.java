@@ -1,6 +1,6 @@
-package org.thisdote.communityfordevelopers.studygroup_member.query;
+package org.thisdote.communityfordevelopers.studygroup_member.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class StudyGroupMemberDTO {
     private int studyGroupId;
