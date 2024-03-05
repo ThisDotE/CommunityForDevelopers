@@ -1,6 +1,7 @@
 package org.thisdote.communityfordevelopers.user.dto;
 
 import lombok.*;
+import org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberDTO;
 
 import java.util.Date;
 
@@ -20,5 +21,6 @@ public class UserDTO {
     private Date userRegistDate;
     private Date userInfoUpdateDate;
     private int userGrade;
-//    private StudyGroupMemberDTO studyGroupMemberDTO;
+    private int userResignStatus;
+    private StudyGroupMemberDTO studyGroupMemberDTO;
 }
