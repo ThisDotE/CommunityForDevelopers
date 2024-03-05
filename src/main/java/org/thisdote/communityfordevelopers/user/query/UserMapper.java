@@ -17,4 +17,6 @@ public interface UserMapper {
     List<UserDTO> selectUserCode(int userCode);
 
     List<UserDTO> updateUserEmail(String userEmail);
+
+    List<UserDTO> selectUsersByResignStatus(int resignStatus);
 }

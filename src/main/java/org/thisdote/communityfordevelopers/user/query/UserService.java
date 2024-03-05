@@ -21,6 +21,10 @@ public class UserService {
         return sqlSession.getMapper(UserMapper.class).selectAllUser();
     }
 
+    public List<UserDTO> selectUsersByResignStatus(int resignStatus) {
+        return sqlSession.getMapper(UserMapper.class).selectUsersByResignStatus(resignStatus);
+    }
+
     public List<UserDTO> selectUserId(String userId) {
         return sqlSession.getMapper(UserMapper.class).selectUserId(userId);
     }
@@ -28,7 +32,6 @@ public class UserService {
     public List<UserDTO> selectUserCode(int userCode) {
         return sqlSession.getMapper(UserMapper.class).selectUserCode(userCode);
     }
-
 
     public List<UserDTO> selectUserByUserCode(int userCode) {
         return sqlSession.getMapper(UserMapper.class).selectUserByUserCode(userCode);
