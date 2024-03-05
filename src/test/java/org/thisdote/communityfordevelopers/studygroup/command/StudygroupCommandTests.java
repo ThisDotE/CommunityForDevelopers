@@ -2,6 +2,8 @@ package org.thisdote.communityfordevelopers.studygroup.command;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.thisdote.communityfordevelopers.studygroup.command.service.StudygroupCommandService;
@@ -27,5 +29,12 @@ public class StudygroupCommandTests {
         studygroupCommandDTO.setStudygroupContent("집에가자");
 
         studygroupCommandService.registStudygroup(studygroupCommandDTO);
+    }
+
+    @DisplayName("Studygroup Delete Test")
+    @ParameterizedTest
+    @ValueSource(ints = 5)
+    void testDeleteStudygroup(int studygroupId) {
+        studygroupCommandService.deleteStudygroup(studygroupId);
     }
 }

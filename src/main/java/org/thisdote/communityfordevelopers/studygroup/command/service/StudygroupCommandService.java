@@ -25,4 +25,9 @@ public class StudygroupCommandService {
         StudygroupEntity studygroupEntity = mapper.map(newStudygroup, StudygroupEntity.class);
         studygroupRepository.save(studygroupEntity);
     }
+
+    @Transactional
+    public void deleteStudygroup(int studygroupId) {
+        studygroupRepository.deleteById(studygroupId);
+    }
 }
