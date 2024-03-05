@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleMapper">
 
-    <resultMap id="reportedArticleResultMap" type="org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleDTO">
+    <resultMap id="reportedArticleResultMap" type="org.thisdote.communityfordevelopers.reported_article.dto.ReportedArticleDTO">
         <id property="articleId" column="ARTICLE_ID"/>
         <result property="userCode" column="USER_CODE"/>
         <result property="reportDate" column="REPORT_DATE"/>
