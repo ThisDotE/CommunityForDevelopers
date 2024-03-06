@@ -1,6 +1,7 @@
 package org.thisdote.communityfordevelopers.studygroup.query;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.thisdote.communityfordevelopers.studygroup.dto.StudyGroupDTO;
 
 import java.util.List;
 

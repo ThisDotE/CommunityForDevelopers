@@ -12,11 +12,12 @@ public class ReplyDTO {
     private int replyLikeCount;
     private int userCode;               // fk..
     private int articleId;              // fk..
+    private int replyDeleteStatus;
 
     public ReplyDTO() {
     }
 
-    public ReplyDTO(int replyId, int replyReportStatus, String replyContent, Date replyCreatedDate, Date replyLastUpdateDate, int replyLikeCount, int userCode, int articleId) {
+    public ReplyDTO(int replyId, int replyReportStatus, String replyContent, Date replyCreatedDate, Date replyLastUpdateDate, int replyLikeCount, int userCode, int articleId, int replyDeleteStatus) {
         this.replyId = replyId;
         this.replyReportStatus = replyReportStatus;
         this.replyContent = replyContent;
@@ -25,6 +26,7 @@ public class ReplyDTO {
         this.replyLikeCount = replyLikeCount;
         this.userCode = userCode;
         this.articleId = articleId;
+        this.replyDeleteStatus = replyDeleteStatus;
     }
 
     public int getReplyId() {
@@ -91,6 +93,14 @@ public class ReplyDTO {
         this.articleId = articleId;
     }
 
+    public int getReplyDeleteStatus() {
+        return replyDeleteStatus;
+    }
+
+    public void setReplyDeleteStatus(int replyDeleteStatus) {
+        this.replyDeleteStatus = replyDeleteStatus;
+    }
+
     @Override
     public String toString() {
         return "ReplyDTO{" +
@@ -102,6 +112,7 @@ public class ReplyDTO {
                 ", replyLikeCount=" + replyLikeCount +
                 ", userCode=" + userCode +
                 ", articleId=" + articleId +
+                ", replyDeleteStatus=" + replyDeleteStatus +
                 '}';
     }
 }

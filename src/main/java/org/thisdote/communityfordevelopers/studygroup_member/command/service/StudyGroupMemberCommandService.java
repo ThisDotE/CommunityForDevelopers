@@ -27,4 +27,13 @@ public class StudyGroupMemberCommandService {
                 modelMapper.map(newStudyGroupMember, StudyGroupMemberEntity.class)
         );
     }
+
+    @Transactional
+    public void modifyStudyGroupMemberRole(StudyGroupMemberDTO modifyStudyGroupMember) {
+        StudyGroupMemberEntity foundStudyGroupMember =
+                studyGroupMemberCommandRepository
+                        .findById(modifyStudyGroupMember.getStudyGroupMemberId())
+                        .orElseThrow(IllegalArgumentException::new);
+//        foundStudyGroupMember.setStudyGroupRole();
+    }
 }

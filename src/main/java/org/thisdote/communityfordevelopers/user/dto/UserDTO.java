@@ -15,12 +15,13 @@ public class UserDTO {
     private Date userRegistDate;
     private Date userInfoUpdateDate;
     private int userGrade;
+    private int userResignStatus;
     private StudyGroupMemberDTO studyGroupMemberDTO;
 
     public UserDTO() {
     }
 
-    public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudygroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade) {
+    public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudygroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade, int userResignStatus) {
         this.userCode = userCode;
         this.userId = userId;
         this.userPassword = userPassword;
@@ -31,9 +32,10 @@ public class UserDTO {
         this.userRegistDate = userRegistDate;
         this.userInfoUpdateDate = userInfoUpdateDate;
         this.userGrade = userGrade;
+        this.userResignStatus = userResignStatus;
     }
 
-    public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudyGroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade, StudyGroupMemberDTO studyGroupMemberDTO) {
+    public UserDTO(int userCode, String userId, String userPassword, Date userBirthday, String userPhone, String userEmail, int userStudyGroupStatus, Date userRegistDate, Date userInfoUpdateDate, int userGrade, int userResignStatus, StudyGroupMemberDTO studyGroupMemberDTO) {
         this.userCode = userCode;
         this.userId = userId;
         this.userPassword = userPassword;
@@ -44,6 +46,7 @@ public class UserDTO {
         this.userRegistDate = userRegistDate;
         this.userInfoUpdateDate = userInfoUpdateDate;
         this.userGrade = userGrade;
+        this.userResignStatus = userResignStatus;
         this.studyGroupMemberDTO = studyGroupMemberDTO;
     }
 
@@ -76,6 +79,10 @@ public class UserDTO {
     }
     public int getUserGrade() {
         return userGrade;
+    }
+
+    public int getUserResignStatus() {
+        return userResignStatus;
     }
 
     public void setUserCode(int userCode) {
@@ -118,7 +125,11 @@ public class UserDTO {
         this.userGrade = userGrade;
     }
 
-    public void setStudygroupMemberDTO(StudyGroupMemberDTO studyGroupMemberDTO) {
+    public void setUserResignStatus(int userResignStatus) {
+        this.userResignStatus = userResignStatus;
+    }
+
+    public void setStudyGroupMemberDTO(StudyGroupMemberDTO studyGroupMemberDTO) {
         this.studyGroupMemberDTO = studyGroupMemberDTO;
     }
 
@@ -139,6 +150,7 @@ public class UserDTO {
                 ", userRegistDate=" + userRegistDate +
                 ", userInfoUpdateDate=" + userInfoUpdateDate +
                 ", userGrade=" + userGrade +
+                ", userResignStatus=" + userResignStatus +
                 ", studyGroupMemberDTO=" + studyGroupMemberDTO +
                 '}';
     }

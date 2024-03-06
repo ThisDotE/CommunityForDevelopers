@@ -52,9 +52,13 @@ public class StudyGroupMemberCommandTests {
         );
     }
 
-//    @DisplayName("Update member role of study group member test")
-//    @ParameterizedTest
-//    @ValueSource(ints = 1)
+    @DisplayName("Update member role of study group member test")
+    @ParameterizedTest
+    @ValueSource(ints = 1)
+    void testUpdateStudyGroupMemberRole(int studyGroupMemberId) {
+        int newRole = 1;    // 역할을 스터디장으로 변경하겠다
+
+    }
 
 
 

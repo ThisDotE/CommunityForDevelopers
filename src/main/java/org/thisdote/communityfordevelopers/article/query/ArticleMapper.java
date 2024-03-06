@@ -1,6 +1,7 @@
 package org.thisdote.communityfordevelopers.article.query;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.thisdote.communityfordevelopers.article.dto.ArticleDTO;
 
 import java.util.List;
 import java.util.Map;

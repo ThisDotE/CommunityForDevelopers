@@ -40,4 +40,7 @@ public class Reply {
 
     @Column(name = "artcle_id")
     private int articleId;
+
+    @Column(name = "reply_delete_status")
+    private int replyDeleteStatus;
 }
