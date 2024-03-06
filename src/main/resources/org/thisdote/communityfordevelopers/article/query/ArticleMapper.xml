@@ -143,8 +143,8 @@
         </trim>
     </select>
 
-    <resultMap id="articleInfoReply" type="org.thisdote.communityfordevelopers.article.query.ArticleDTO" extends="articleResultMap">
-        <association property="replyDTOList" javaType="org.thisdote.communityfordevelopers.reply.query.ReplyDTO">
+    <resultMap id="articleInfoReply" type="org.thisdote.communityfordevelopers.article.dto.ArticleDTO" extends="articleResultMap">
+        <association property="replyDTOList" javaType="org.thisdote.communityfordevelopers.reply.dto.ReplyDTO">
             <id property="replyId" column="reply_id"/>
             <result property="replyReportStatus" column="reply_report_status"/>
             <result property="replyContent" column="reply_content"/>

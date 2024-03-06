@@ -1,7 +1,7 @@
 package org.thisdote.communityfordevelopers.article.dto;
 
 import lombok.Data;
-import org.thisdote.communityfordevelopers.reply.query.ReplyDTO;
+import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
 @Data
 public class ArticleDTO {
