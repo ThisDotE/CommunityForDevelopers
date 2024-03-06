@@ -8,6 +8,7 @@ import lombok.*;
 @Setter
 @ToString
 public class ReportedArticleDTO {
+    private int reportArticleId;
     private int articleId;
     private int userCode;
     private String reportDate;
