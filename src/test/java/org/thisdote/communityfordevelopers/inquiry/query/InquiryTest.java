@@ -46,7 +46,7 @@ public class InquiryTest {
 
     /* 설명. '문의 카테고리별 조회 테스트(Enum) 의 MethodSource */
     public static Stream<Arguments> getInquiryCategoryEnum() {
-        int inquiryCategory = InquiryCategoryEnum.SANCTION.ordinal() + 1;
+        int inquiryCategory = InquiryCategoryEnum.ACCOUNT.ordinal() + 1;
         return Stream.of(Arguments.of(inquiryCategory));
     }
 

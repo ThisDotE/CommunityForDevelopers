@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.reply.query;
+package org.thisdote.communityfordevelopers.reply.dto;
 
 import java.util.Date;
 
@@ -11,19 +11,12 @@ public class ReplyDTO {
     private Date replyLastUpdateDate;
     private int replyLikeCount;
     private int userCode;               // fk..
+    private int articleId;              // fk..
 
     public ReplyDTO() {
     }
 
-    public ReplyDTO(
-            int replyId,
-            int replyReportStatus,
-            String replyContent,
-            Date replyCreatedDate,
-            Date replyLastUpdateDate,
-            int replyLikeCount,
-            int userCode
-    ) {
+    public ReplyDTO(int replyId, int replyReportStatus, String replyContent, Date replyCreatedDate, Date replyLastUpdateDate, int replyLikeCount, int userCode, int articleId) {
         this.replyId = replyId;
         this.replyReportStatus = replyReportStatus;
         this.replyContent = replyContent;
@@ -31,6 +24,7 @@ public class ReplyDTO {
         this.replyLastUpdateDate = replyLastUpdateDate;
         this.replyLikeCount = replyLikeCount;
         this.userCode = userCode;
+        this.articleId = articleId;
     }
 
     public int getReplyId() {
@@ -89,6 +83,14 @@ public class ReplyDTO {
         this.userCode = userCode;
     }
 
+    public int getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(int articleId) {
+        this.articleId = articleId;
+    }
+
     @Override
     public String toString() {
         return "ReplyDTO{" +
@@ -99,6 +101,7 @@ public class ReplyDTO {
                 ", replyLastUpdateDate=" + replyLastUpdateDate +
                 ", replyLikeCount=" + replyLikeCount +
                 ", userCode=" + userCode +
+                ", articleId=" + articleId +
                 '}';
     }
 }

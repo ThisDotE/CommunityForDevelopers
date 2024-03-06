@@ -3,6 +3,7 @@ package org.thisdote.communityfordevelopers.studygroup_member.query;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thisdote.communityfordevelopers.studygroup_member.dto.StudyGroupMemberDTO;
 
 import java.util.List;
 
