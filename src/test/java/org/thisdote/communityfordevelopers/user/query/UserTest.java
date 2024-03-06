@@ -13,6 +13,7 @@ import java.util.List;
 
 @SpringBootTest
 public class UserTest {
+
     @Autowired
     private UserService userService;
 

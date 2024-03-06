@@ -27,15 +27,9 @@ public class UserCommandService {
         userRepository.save(mapper.map(newUser, UserEntity.class));
     }
 
-    /* TODO.
-     *  회원 정보 수정
-    * */
     @Transactional
     public void modifyUser(UserDTO modifyUser) {
         UserEntity foundUser = userRepository.findById(modifyUser.getUserCode()).orElseThrow(IllegalAccessError::new);
-
-//        UserDTO user = mapper.map(foundUser, UserDTO.class);
-
         foundUser.setUserId(modifyUser.getUserId());
         foundUser.setUserPassword(modifyUser.getUserPassword());
         foundUser.setUserBirthday(modifyUser.getUserBirthday());

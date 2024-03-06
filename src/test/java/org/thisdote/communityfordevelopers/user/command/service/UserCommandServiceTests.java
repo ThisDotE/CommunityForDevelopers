@@ -41,6 +41,7 @@ class UserCommandServiceTests {
 
         return Stream.of(Arguments.of(userDTO));
     }
+
     @DisplayName("회원 등록 테스트")
     @ParameterizedTest
     @MethodSource("getUserDTO")
