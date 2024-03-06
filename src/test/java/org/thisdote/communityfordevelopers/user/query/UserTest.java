@@ -27,6 +27,16 @@ public class UserTest {
         );
     }
 
+    @DisplayName("회원 탈퇴 여부 별 조회 테스트")
+    @ParameterizedTest
+    @ValueSource(ints = 0)
+    void testFindUserByResignStatus(int resignStatus) {
+        Assertions.assertDoesNotThrow(() -> {
+            List<UserDTO> userList = userService.selectUsersByResignStatus(resignStatus);
+            userList.forEach(System.out::println);
+        });
+    }
+
     @DisplayName("UserID로 회원 조회 Test")
     @ParameterizedTest
     @ValueSource(strings = "playdata1218")
@@ -45,8 +55,8 @@ public class UserTest {
     void testFindUserCode(int userCode) {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<UserDTO> user = userService.selectUserCode(userCode);
-                    user.forEach(System.out::println);
+                    UserDTO user = userService.selectUserCode(userCode);
+                    System.out.println("user = " + user);
                 }
         );
     }

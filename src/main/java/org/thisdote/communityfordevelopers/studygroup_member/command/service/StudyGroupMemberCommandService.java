@@ -27,4 +27,14 @@ public class StudyGroupMemberCommandService {
                 modelMapper.map(newStudyGroupMember, StudyGroupMemberEntity.class)
         );
     }
+
+    @Transactional
+    public void deleteStudyGroupMember(int studyGroupMemberId) {
+        studyGroupMemberCommandRepository.deleteById(studyGroupMemberId);
+    }
+
+    @Transactional
+    public void modifyStudyGroupMemberRole(StudyGroupMemberDTO modifyMember) {
+        studyGroupMemberCommandRepository.save(modelMapper.map(modifyMember, StudyGroupMemberEntity.class));
+    }
 }

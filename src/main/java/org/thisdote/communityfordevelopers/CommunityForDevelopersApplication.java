@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableTransactionManagement
 public class CommunityForDevelopersApplication {
 
     public static void main(String[] args) {
@@ -19,6 +18,6 @@ public class CommunityForDevelopersApplication {
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
-    };
+    }
 
 }

@@ -10,4 +10,6 @@ public interface ReplyMapper {
     List<ReplyDTO> selectAllReply();
 
     List<ReplyDTO> selectReplyByUser(int userCode);
+
+    ReplyDTO selectReplyId(int replyId);
 }

@@ -8,6 +8,8 @@ import org.thisdote.communityfordevelopers.user.command.entity.UserEntity;
 import org.thisdote.communityfordevelopers.user.command.repository.UserRepository;
 import org.thisdote.communityfordevelopers.user.dto.UserDTO;
 
+import java.util.Date;
+
 @Service
 public class UserCommandService {
 
@@ -25,18 +27,26 @@ public class UserCommandService {
         userRepository.save(mapper.map(newUser, UserEntity.class));
     }
 
-    /* TODO.
-     *  회원 정보 수정
-    * */
-//    @Transactional
-//    public void modifyUser(UserDTO modifyUser) {
-//        User foundUser = userRepository.findById(modifyUser.getUserCode()).orElseThrow(IllegalAccessError::new);
-//
+    @Transactional
+    public void modifyUser(UserDTO modifyUser) {
+        UserEntity foundUser = userRepository.findById(modifyUser.getUserCode()).orElseThrow(IllegalAccessError::new);
+
 //        UserDTO user = mapper.map(foundUser, UserDTO.class);
-//    }
+
+        foundUser.setUserId(modifyUser.getUserId());
+        foundUser.setUserPassword(modifyUser.getUserPassword());
+        foundUser.setUserBirthday(modifyUser.getUserBirthday());
+        foundUser.setUserPhone(modifyUser.getUserPhone());
+        foundUser.setUserEmail(modifyUser.getUserEmail());
+        foundUser.setUserStudyGroupStatus(modifyUser.getUserStudyGroupStatus());
+        foundUser.setUserInfoUpdateDate(new Date());
+        foundUser.setUserGrade(modifyUser.getUserGrade());
+    }
 
     @Transactional
     public void deleteUser(int userCode) {
-        userRepository.deleteById(userCode);
+        UserEntity foundUser = userRepository.findById(userCode).orElseThrow(IllegalArgumentException::new);
+
+        foundUser.setUserResignStatus(0);
     }
 }

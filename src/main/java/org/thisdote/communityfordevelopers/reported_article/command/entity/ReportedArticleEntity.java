@@ -1,9 +1,6 @@
-package org.thisdote.communityfordevelopers.reported_article.command;
+package org.thisdote.communityfordevelopers.reported_article.command.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -13,13 +10,14 @@ public class ReportedArticleEntity {
 
     @Id
     @Column(name = "report_article_id")
-    private int reportArticleId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer reportArticleId;
 
     @Column(name = "article_id")
-    private int articleId;
+    private Integer articleId;
 
     @Column(name = "user_code")
-    private int userCode;
+    private Integer userCode;
 
     @Column(name = "report_date")
     private Date reportDate;
@@ -28,15 +26,23 @@ public class ReportedArticleEntity {
     private String reportContent;
 
     @Column(name = "report_reported_count")
-    private int reportReportedCount;
+    private Integer reportReportedCount;
 
     @Column(name = "report_type")
-    private int reportType;
+    private Integer reportType;
 
     public ReportedArticleEntity() {
     }
 
-    public ReportedArticleEntity(int reportArticleId, int articleId, int userCode, Date reportDate, String reportContent, int reportReportedCount, int reportType) {
+    public ReportedArticleEntity(
+            Integer reportArticleId,
+            Integer articleId,
+            Integer userCode,
+            Date reportDate,
+            String reportContent,
+            Integer reportReportedCount,
+            Integer reportType
+    ) {
         this.reportArticleId = reportArticleId;
         this.articleId = articleId;
         this.userCode = userCode;
@@ -46,7 +52,7 @@ public class ReportedArticleEntity {
         this.reportType = reportType;
     }
 
-    public int getReportArticleId() {
+    public Integer getReportArticleId() {
         return reportArticleId;
     }
 
@@ -54,7 +60,7 @@ public class ReportedArticleEntity {
         this.reportArticleId = reportArticleId;
     }
 
-    public int getArticleId() {
+    public Integer getArticleId() {
         return articleId;
     }
 
@@ -62,7 +68,7 @@ public class ReportedArticleEntity {
         this.articleId = articleId;
     }
 
-    public int getUserCode() {
+    public Integer getUserCode() {
         return userCode;
     }
 
@@ -86,7 +92,7 @@ public class ReportedArticleEntity {
         this.reportContent = reportContent;
     }
 
-    public int getReportReportedCount() {
+    public Integer getReportReportedCount() {
         return reportReportedCount;
     }
 
@@ -94,7 +100,7 @@ public class ReportedArticleEntity {
         this.reportReportedCount = reportReportedCount;
     }
 
-    public int getReportType() {
+    public Integer getReportType() {
         return reportType;
     }
 

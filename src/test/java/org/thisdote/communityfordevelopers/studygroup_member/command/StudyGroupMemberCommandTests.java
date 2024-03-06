@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.thisdote.communityfordevelopers.studygroup_member.command.entity.StudyGroupMemberEntity;
 import org.thisdote.communityfordevelopers.studygroup_member.command.service.StudyGroupMemberCommandService;
 import org.thisdote.communityfordevelopers.studygroup_member.dto.StudyGroupMemberDTO;
 import org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberService;
@@ -21,7 +22,7 @@ public class StudyGroupMemberCommandTests {
     @Autowired
     private StudyGroupMemberCommandService studyGroupMemberCommandService;
 
-    @DisplayName("Regist Study Group Member Test")
+    @DisplayName("스터디그룹_멤버_등록_테스트")
     @Test
     void testInsertStudyGroupMember() {
         StudyGroupMemberDTO newStudyGroupMember = new StudyGroupMemberDTO();
@@ -52,13 +53,32 @@ public class StudyGroupMemberCommandTests {
         );
     }
 
-//    @DisplayName("Update member role of study group member test")
-//    @ParameterizedTest
-//    @ValueSource(ints = 1)
+    @DisplayName("스터디그룹_멤버_역할_수정_테스트")
+    @ParameterizedTest
+    @ValueSource(ints = 3)
+    void testUpdateStudyGroupMemberRole(int studyGroupMemberId) {
+
+//        int newRole = 0;    // 역할을 스터디원으로 변경하겠다
+        int newRole = 1;    // 역할을 스터디장으로 변경하겠다
+
+        StudyGroupMemberDTO modifyMember =
+                studyGroupMemberService
+                        .selectAllStudyGroupMember()
+                        .get(studyGroupMemberId);
+
+        modifyMember.setStudyGroupMemberId(studyGroupMemberId);
+        modifyMember.setStudyGroupRole(newRole);
+
+        studyGroupMemberCommandService.modifyStudyGroupMemberRole(modifyMember);
+    }
 
 
 
-//    @DisplayName("Delete Study Group Member Test")
-//    @ParameterizedTest
-//    @ValueSource(ints = 10)
+    @DisplayName("스터디그룹_멤버_삭제_테스트")
+    @ParameterizedTest
+    @ValueSource(ints = 16)
+    void testDeleteStudyGroupMember(int studyGroupMemberId) {
+        studyGroupMemberCommandService.deleteStudyGroupMember(studyGroupMemberId);
+    }
+
 }

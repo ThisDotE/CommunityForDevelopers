@@ -79,8 +79,9 @@
              , STUDYGROUP_ACTIVATION_STATUS
              , STUDYGROUP_STUDY_TIME
              , STUDYGROUP_CONTENT
-             , A.STUDYGROUP_DELETE_STATUS
+             , STUDYGROUP_DELETE_STATUS
           FROM STUDYGROUP
          WHERE STUDYGROUP_TYPE = #{studygroup_type};
     </select>
+
 </mapper>
