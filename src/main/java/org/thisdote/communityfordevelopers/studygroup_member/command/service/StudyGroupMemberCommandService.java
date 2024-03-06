@@ -29,11 +29,12 @@ public class StudyGroupMemberCommandService {
     }
 
     @Transactional
-    public void modifyStudyGroupMemberRole(StudyGroupMemberDTO modifyStudyGroupMember) {
-        StudyGroupMemberEntity foundStudyGroupMember =
-                studyGroupMemberCommandRepository
-                        .findById(modifyStudyGroupMember.getStudyGroupMemberId())
-                        .orElseThrow(IllegalArgumentException::new);
-//        foundStudyGroupMember.setStudyGroupRole();
+    public void deleteStudyGroupMember(int studyGroupMemberId) {
+        studyGroupMemberCommandRepository.deleteById(studyGroupMemberId);
+    }
+
+    @Transactional
+    public void modifyStudyGroupMemberRole(StudyGroupMemberDTO modifyMember) {
+        studyGroupMemberCommandRepository.save(modelMapper.map(modifyMember, StudyGroupMemberEntity.class));
     }
 }
