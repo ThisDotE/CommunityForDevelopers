@@ -21,7 +21,7 @@ public class StudygroupCommandTests {
     @Test
     public void testInsertStudygroup() {
         StudygroupCommandDTO studygroupCommandDTO = new StudygroupCommandDTO();
-        studygroupCommandDTO.setStudygroupId(5);
+
         studygroupCommandDTO.setStudygroupType(1);
         studygroupCommandDTO.setStudygroupCreateDate(new Date());
         studygroupCommandDTO.setStudygroupMemberCount(30);

@@ -5,10 +5,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleDTO;
-import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleService;
-import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleDTO;
-import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleService;
+//import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleDTO;
+//import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleService;
+//import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleDTO;
+//import org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleService;
 import org.thisdote.communityfordevelopers.reported_article.dto.ReportedArticleDTO;
 
 import java.util.List;

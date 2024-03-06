@@ -34,4 +34,13 @@ public class InquiryCommandService {
         inquiryRepository.deleteById(inquiryId);
     }
 
+    @Transactional
+    public void modifyInquiry(InquiryCommandDTO inquiry) {
+        InquiryEntity inquiryEntity = mapper.map(inquiry, InquiryEntity.class);
+
+        System.out.println("inquiryEntity = " + inquiryEntity);
+
+        inquiryRepository.save(inquiryEntity);
+    }
+
 }

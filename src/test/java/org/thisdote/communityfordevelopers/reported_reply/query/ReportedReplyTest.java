@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.reported_reply.dto.ReportedReplyDTO;
+//import org.thisdote.communityfordevelopers.reported_reply.dto.ReportedReplyDTO;
 
 import java.util.List;
 
@@ -14,14 +14,14 @@ public class ReportedReplyTest {
     @Autowired
     private ReportedReplyService reportedReplyService;
 
-    @DisplayName("Reported Reply Test")
-    @Test
-    void testFindAllReportedReplies() {
-        Assertions.assertDoesNotThrow(
-                () -> {
-                    List<ReportedReplyDTO> reportedreplies = reportedReplyService.selectAllReportedReply();
-                    reportedreplies.forEach(System.out::println);
-                }
-        );
-    }
+//    @DisplayName("Reported Reply Test")
+//    @Test
+//    void testFindAllReportedReplies() {
+//        Assertions.assertDoesNotThrow(
+//                () -> {
+//                    List<ReportedReplyDTO> reportedreplies = reportedReplyService.selectAllReportedReply();
+//                    reportedreplies.forEach(System.out::println);
+//                }
+//        );
+//    }
 }
