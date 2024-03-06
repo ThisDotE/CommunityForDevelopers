@@ -44,6 +44,23 @@
           FROM USER A
     </select>
 
+    <select id="selectUsersByResignStatus" resultMap="userResultMap" parameterType="_int">
+        SELECT
+               A.USER_CODE
+             , A.USER_ID
+             , A.USER_PASSWORD
+             , A.USER_BIRTHDAY
+             , A.USER_PHONE
+             , A.USER_EMAIL
+             , A.USER_STUDYGROUP_STATUS
+             , A.USER_REGIST_DATE
+             , A.USER_INFO_UPDATE_DATE
+             , A.USER_GRADE
+             , A.USER_RESIGN_STATUS
+          FROM USER A
+         WHERE USER_RESIGN_STATUS = #{resignStatus}
+    </select>
+
     <select id="selectUserId" resultMap="userResultMap" parameterType="String">
         SELECT
                A.USER_CODE
