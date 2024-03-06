@@ -107,6 +107,7 @@
              , A.USER_REGIST_DATE
              , A.USER_INFO_UPDATE_DATE
              , A.USER_GRADE
+             , A.USER_RESIGN_STATUS
              , B.STUDYGROUP_ID
              , B.STUDYGROUP_ROLE
              , B.STUDYGROUP_REGIST_DATE

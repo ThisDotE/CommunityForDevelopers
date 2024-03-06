@@ -13,6 +13,7 @@
         <result property="replyLastUpdateDate" column="reply_last_update_date"/>
         <result property="replyLikeCount" column="reply_like_count"/>
         <result property="userCode" column="user_code"/>
+        <result property="replyDeleteStatus" column="reply_delete_status"/>
     </resultMap>
 
     <select id="selectAllReply" resultMap="replyResultMap">
@@ -24,6 +25,7 @@
              , A.REPLY_LAST_UPDATE_DATE
              , A.REPLY_LIKE_COUNT
              , A.USER_CODE
+             , A.REPLY_DELETE_STATUS
           FROM REPLY A;
     </select>
 
@@ -36,6 +38,7 @@
              , A.REPLY_LAST_UPDATE_DATE
              , A.REPLY_LIKE_COUNT
              , A.USER_CODE
+             , A.REPLY_DELETE_STATUS
           FROM REPLY A
          WHERE A.user_code = #{userCode};
     </select>
