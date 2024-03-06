@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.thisdote.communityfordevelopers.studygroup.command.entity.StudyGroupEntity;
 import org.thisdote.communityfordevelopers.studygroup.command.repository.StudyGroupRepository;
 import org.thisdote.communityfordevelopers.studygroup.dto.StudyGroupCommandDTO;
+import org.thisdote.communityfordevelopers.studygroup.query.StudyGroupDTO;
 
 @Service
 public class StudyGroupCommandService {
@@ -27,8 +28,9 @@ public class StudyGroupCommandService {
     }
 
     @Transactional
-    public void deleteStudygroup(int studygroupId) {
-        studygroupRepository.deleteById(studygroupId);
+    public void deleteStudygroup() {
+        StudyGroupCommandDTO studyGroupCommandDTO = new StudyGroupCommandDTO();
+        studyGroupCommandDTO.setStudygroupDeleteStatus(1);
     }
 
     @Transactional

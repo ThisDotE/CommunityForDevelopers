@@ -52,8 +52,18 @@ public class StudyGroupCommandTests {
 
     @DisplayName("StudyGroup Delete Test")
     @ParameterizedTest
-    @ValueSource(ints = 5)
-    void testDeleteStudyGroup(int studygroupId) {
-        studygroupCommandService.deleteStudygroup(studygroupId);
+    @ValueSource(ints = 3)
+    void testDeleteStudyGroup() {
+        studygroupCommandService.deleteStudygroup();
     }
+//    @ParameterizedTest
+//    @ValueSource(ints = 3)
+//    public void 게시글_삭제(int articleId){
+//        int deleteStatus = 0;
+//
+//        ArticleDTO articleDTO = new ArticleDTO();
+//        articleDTO.setArticleDeleteStatus(0);
+//
+//        articleService1.modifyArticle(articleDTO, articleId);
+//    }
 }

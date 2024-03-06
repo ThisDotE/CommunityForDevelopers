@@ -16,4 +16,5 @@ public class StudyGroupCommandDTO {
     private java.util.Date studygroupStudyTime;
     private String studygroupContent;
     private int studygroupDeleteStatus;
+
 }

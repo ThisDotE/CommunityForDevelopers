@@ -24,6 +24,7 @@
              , A.STUDYGROUP_ACTIVATION_STATUS
              , A.STUDYGROUP_STUDY_TIME
              , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
           FROM STUDYGROUP A;
     </select>
 
@@ -36,6 +37,7 @@
              , A.STUDYGROUP_ACTIVATION_STATUS
              , A.STUDYGROUP_STUDY_TIME
              , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
           FROM STUDYGROUP A
          WHERE STUDYGROUP_TYPE = '영어 시험 스터디';
     </select>
@@ -49,6 +51,7 @@
              , A.STUDYGROUP_ACTIVATION_STATUS
              , A.STUDYGROUP_STUDY_TIME
              , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
           FROM STUDYGROUP A
          WHERE STUDYGROUP_TYPE = '국가 자격증 스터디';
     </select>
@@ -62,6 +65,7 @@
              , A.STUDYGROUP_ACTIVATION_STATUS
              , A.STUDYGROUP_STUDY_TIME
              , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
           FROM STUDYGROUP A
          WHERE STUDYGROUP_ACTIVATION_STATUS = #{activationStatus};
     </select>
@@ -75,8 +79,8 @@
              , STUDYGROUP_ACTIVATION_STATUS
              , STUDYGROUP_STUDY_TIME
              , STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
           FROM STUDYGROUP
          WHERE STUDYGROUP_TYPE = #{studygroup_type};
     </select>
-
 </mapper>

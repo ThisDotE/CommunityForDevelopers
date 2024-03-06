@@ -51,7 +51,7 @@ public class InquiryCommandTests {
 
     @DisplayName("Inquiry Delete Test")
     @ParameterizedTest
-    @ValueSource(ints = 5)
+    @ValueSource(ints = 6)
     void testDeleteInquiry(int inquiryCode) {
         inquiryService.deleteInquiry(inquiryCode);
     }
