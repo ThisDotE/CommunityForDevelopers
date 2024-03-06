@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class StudygroupCommandDTO {
+public class StudyGroupCommandDTO {
     private int studygroupId;
     private int studygroupType;
     private java.util.Date studygroupCreateDate;
@@ -15,5 +15,5 @@ public class StudygroupCommandDTO {
     private int studygroupActivationStatus;
     private java.util.Date studygroupStudyTime;
     private String studygroupContent;
-    private int studygroupResignStatus;
+    private int studygroupDeleteStatus;
 }

@@ -10,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class StudygroupEntity {
+public class StudyGroupEntity {
 
     @Id
     @Column(name="studygroup_id")
@@ -35,6 +35,6 @@ public class StudygroupEntity {
     @Column(name="studygroup_content")
     private String studygroupContent;
 
-    @Column(name="studygroup_resign_status")
-    private int studygroupResignStatus;
+    @Column(name="studygroup_delete_status")
+    private int studygroupDeleteStatus;
 }
