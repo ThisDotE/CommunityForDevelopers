@@ -3,7 +3,7 @@ package org.thisdote.communityfordevelopers.reported_reply.query;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.thisdote.communityfordevelopers.reported_reply.dto.ReportedReplyDTO;
+//import org.thisdote.communityfordevelopers.reported_reply.dto.
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class ReportedReplyService {
         this.sqlSession = sqlSession;
     }
 
-    public List<ReportedReplyDTO> selectAllReportedReply() {
-        return sqlSession.getMapper(ReportedReplyMapper.class).selectAllReportedReply();
-    }
+//    public List<ReportedReplyDTO> selectAllReportedReply() {
+//        return sqlSession.getMapper(ReportedReplyMapper.class).selectAllReportedReply();
+//    }
 }

@@ -13,7 +13,6 @@
         <result property="studyGroupActivationStatus" column="studygroup_activation_status"/>
         <result property="studyGroupStudyTime" column="studygroup_study_time"/>
         <result property="studyGroupContent" column="studygroup_content"/>
-        <result property="studyGroupDeleteStatus" column="studygroup_delete_status"/>
     </resultMap>
     
     <select id="selectAllStudyGroup" resultMap="studyGroupResultMap">
@@ -73,16 +72,16 @@
 
     <select id="selectStudyGroupsByType" resultMap="studyGroupResultMap" parameterType="_int">
         SELECT
-               A.STUDYGROUP_ID
-             , A.STUDYGROUP_TYPE
-             , A.STUDYGROUP_CREATE_DATE
-             , A.STUDYGROUP_MEMBER_COUNT
-             , A.STUDYGROUP_ACTIVATION_STATUS
-             , A.STUDYGROUP_STUDY_TIME
-             , A.STUDYGROUP_CONTENT
-             , A.STUDYGROUP_DELETE_STATUS
-          FROM STUDYGROUP A
-         WHERE A.STUDYGROUP_TYPE = #{studygroup_type};
+               STUDYGROUP_ID
+             , STUDYGROUP_TYPE
+             , STUDYGROUP_CREATE_DATE
+             , STUDYGROUP_MEMBER_COUNT
+             , STUDYGROUP_ACTIVATION_STATUS
+             , STUDYGROUP_STUDY_TIME
+             , STUDYGROUP_CONTENT
+             , STUDYGROUP_DELETE_STATUS
+          FROM STUDYGROUP
+         WHERE STUDYGROUP_TYPE = #{studygroup_type};
     </select>
 
 </mapper>

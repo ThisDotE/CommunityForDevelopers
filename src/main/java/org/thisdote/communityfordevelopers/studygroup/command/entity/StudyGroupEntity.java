@@ -1,15 +1,10 @@
 package org.thisdote.communityfordevelopers.studygroup.command.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
-
 @Entity
-@Table(name = "studygroup")
+@Table(name="studygroup")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -18,27 +13,28 @@ import java.util.Date;
 public class StudyGroupEntity {
 
     @Id
-    @Column(name = "studygroup_id")
-    private int studyGroupId;
+    @Column(name="studygroup_id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer studygroupId;
 
-    @Column(name = "studygroup_type")
-    private int studyGroupType;
+    @Column(name="studygroup_type")
+    private Integer studygroupType;
 
-    @Column(name = "studygroup_created_date")
-    private Date studyGroupCreatedDate;
+    @Column(name="studygroup_create_date")
+    private java.util.Date studygroupCreateDate;
 
-    @Column(name = "studygroup_member_count")
-    private int studyGroupMemberCount;
+    @Column(name="studygroup_member_count")
+    private Integer studygroupMemberCount;
 
-    @Column(name = "studygroup_activation_status")
-    private int studyGroupActivationStatus;
+    @Column(name="studygroup_activation_status")
+    private Integer studygroupActivationStatus;
 
-    @Column(name = "studygroup_study_time")
-    private Date studyGroupStudyTime;
+    @Column(name="studygroup_study_time")
+    private java.util.Date studygroupStudyTime;
 
-    @Column(name = "studygroup_content")
-    private String studyGroupContent;
+    @Column(name="studygroup_content")
+    private String studygroupContent;
 
-    @Column(name = "studygroup_delete_status")
-    private int studyGroupDeleteStatus;
+    @Column(name="studygroup_delete_status")
+    private Integer studygroupDeleteStatus;
 }

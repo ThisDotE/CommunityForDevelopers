@@ -4,7 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.thisdote.communityfordevelopers.reported_reply.dto.ReportedReplyDTO;
+import org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyDTO;
+
 
 @Service
 public class ReportedReplyService1 {

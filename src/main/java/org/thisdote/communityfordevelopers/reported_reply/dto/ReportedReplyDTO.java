@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.reported_reply.dto;
+package org.thisdote.communityfordevelopers.reported_reply.query;
 
 import java.util.Date;
 
