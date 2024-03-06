@@ -1,17 +1,11 @@
 package org.thisdote.communityfordevelopers.article.command;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.thisdote.communityfordevelopers.article.dto.ArticleDTO;
-import org.thisdote.communityfordevelopers.article.query.ArticleService;
-
-import java.util.List;
-
 
 @SpringBootTest
 public class ArticleTest {
@@ -48,10 +42,10 @@ public class ArticleTest {
     @ParameterizedTest
     @ValueSource(ints = 3)
     public void 게시글_삭제(int articleId){
-        int deleteStatus = 0;
+        int deleteStatus = 1;
 
         ArticleDTO articleDTO = new ArticleDTO();
-        articleDTO.setArticleDeleteStatus(0);
+        articleDTO.setArticleDeleteStatus(deleteStatus);
 
         articleService1.deleteArticle(articleDTO, articleId);
     }
@@ -81,6 +75,4 @@ public class ArticleTest {
 
         articleService1.modifyArticle(article);
     }
-
-
 }
