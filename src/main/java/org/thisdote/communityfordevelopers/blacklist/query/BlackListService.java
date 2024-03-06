@@ -3,6 +3,7 @@ package org.thisdote.communityfordevelopers.blacklist.query;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thisdote.communityfordevelopers.blacklist.dto.BlackListDTO;
 
 import java.util.List;
 

@@ -5,8 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberDTO;
-import org.thisdote.communityfordevelopers.studygroup_member.query.StudyGroupMemberService;
+import org.thisdote.communityfordevelopers.studygroup_member.dto.StudyGroupMemberDTO;
 
 import java.util.List;
 

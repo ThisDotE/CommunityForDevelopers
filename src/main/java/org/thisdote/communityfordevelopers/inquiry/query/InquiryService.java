@@ -24,4 +24,7 @@ public class InquiryService {
         return sqlSession.getMapper(InquiryMapper.class).selectInquiryBy(userCode);
     }
 
+    public List<InquiryDTO> selectInquiryByCategory(int inquiryCategory) {
+        return sqlSession.getMapper(InquiryMapper.class).selectInquiryByCategory(inquiryCategory);
+    }
 }

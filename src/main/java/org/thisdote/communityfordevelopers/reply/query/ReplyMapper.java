@@ -1,6 +1,7 @@
 package org.thisdote.communityfordevelopers.reply.query;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
 import java.util.List;
 
