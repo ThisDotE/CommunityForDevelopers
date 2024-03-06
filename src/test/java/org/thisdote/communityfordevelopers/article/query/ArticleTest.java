@@ -9,10 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thisdote.communityfordevelopers.article.query.ArticleCategory;
-import org.thisdote.communityfordevelopers.article.query.ArticleDTO;
-import org.thisdote.communityfordevelopers.article.query.ArticleService;
-import org.thisdote.communityfordevelopers.article.query.SearchCriteriaEnum;
+import org.thisdote.communityfordevelopers.article.dto.ArticleDTO;
 
 import java.util.HashMap;
 import java.util.List;
