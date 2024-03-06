@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.studygroup.query.StudyGroupMapper">
 
-    <resultMap id="studyGroupResultMap" type="org.thisdote.communityfordevelopers.studygroup.query.StudyGroupDTO">
+    <resultMap id="studyGroupResultMap" type="org.thisdote.communityfordevelopers.studygroup.dto.StudyGroupDTO">
         <id property="studyGroupId" column="studygroup_id"/>
         <result property="studyGroupType" column="studygroup_type"/>
         <result property="studyGroupCreatedDate" column="studygroup_create_date"/>
