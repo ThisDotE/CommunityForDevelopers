@@ -46,6 +46,9 @@ public class UserEntity {
     @Column(name = "user_grade")
     private int userGrade;
 
+    @Column(name = "user_resign_status")
+    private int userResignStatus;
+
 //    private StudyGroupMemberDTO studyGroupMemberDTO;
 
 }

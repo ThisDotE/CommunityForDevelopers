@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.studygroup.query;
+package org.thisdote.communityfordevelopers.studygroup.dto;
 
 import java.util.Date;
 
@@ -11,34 +11,20 @@ public class StudyGroupDTO {
     private int studyGroupActivationStatus;
     private Date studyGroupStudyTime;
     private String studyGroupContent;
+    private int studyGroupDeleteStatus;
 
     public StudyGroupDTO() {
     }
 
-    public StudyGroupDTO(
-            int studyGroupType,
-            int studyGroupId,
-            Date studyGroupCreatedDate,
-            int studyGroupMemberCount,
-            int studyGroupActivationStatus,
-            Date studyGroupStudyTime,
-            String studyGroupContent
-    ) {
-        this.studyGroupType = studyGroupType;
+    public StudyGroupDTO(int studyGroupId, int studyGroupType, Date studyGroupCreatedDate, int studyGroupMemberCount, int studyGroupActivationStatus, Date studyGroupStudyTime, String studyGroupContent, int studyGroupDeleteStatus) {
         this.studyGroupId = studyGroupId;
+        this.studyGroupType = studyGroupType;
         this.studyGroupCreatedDate = studyGroupCreatedDate;
         this.studyGroupMemberCount = studyGroupMemberCount;
         this.studyGroupActivationStatus = studyGroupActivationStatus;
         this.studyGroupStudyTime = studyGroupStudyTime;
         this.studyGroupContent = studyGroupContent;
-    }
-
-    public int getStudyGroupType() {
-        return studyGroupType;
-    }
-
-    public void setStudyGroupType(int studyGroupType) {
-        this.studyGroupType = studyGroupType;
+        this.studyGroupDeleteStatus = studyGroupDeleteStatus;
     }
 
     public int getStudyGroupId() {
@@ -47,6 +33,14 @@ public class StudyGroupDTO {
 
     public void setStudyGroupId(int studyGroupId) {
         this.studyGroupId = studyGroupId;
+    }
+
+    public int getStudyGroupType() {
+        return studyGroupType;
+    }
+
+    public void setStudyGroupType(int studyGroupType) {
+        this.studyGroupType = studyGroupType;
     }
 
     public Date getStudyGroupCreatedDate() {
@@ -89,6 +83,14 @@ public class StudyGroupDTO {
         this.studyGroupContent = studyGroupContent;
     }
 
+    public int getStudyGroupDeleteStatus() {
+        return studyGroupDeleteStatus;
+    }
+
+    public void setStudyGroupDeleteStatus(int studyGroupDeleteStatus) {
+        this.studyGroupDeleteStatus = studyGroupDeleteStatus;
+    }
+
     @Override
     public String toString() {
         return "StudyGroupDTO{" +
@@ -99,6 +101,7 @@ public class StudyGroupDTO {
                 ", studyGroupActivationStatus=" + studyGroupActivationStatus +
                 ", studyGroupStudyTime=" + studyGroupStudyTime +
                 ", studyGroupContent='" + studyGroupContent + '\'' +
+                ", studyGroupDeleteStatus=" + studyGroupDeleteStatus +
                 '}';
     }
 }

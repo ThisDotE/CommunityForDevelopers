@@ -1,4 +1,4 @@
-package org.thisdote.communityfordevelopers.article.query;
+package org.thisdote.communityfordevelopers.article.dto;
 
 import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
@@ -14,20 +14,21 @@ public class ArticleDTO {
     private int articleLikeCount;
     private int articleReplyCount;
     private int articleReportStatus;
-    private int studygroupMemberMaxCount;
-    private String studygroupRecruitmentDeadline;
-    private String articleQuestionCategory;
+    private int studyGroupMemberMaxCount;
+    private String studyGroupRecruitmentDeadline;
+    private int articleQuestionCategory;
     private int userCode;
-    private int studygroupId;
-    private int studygroupCurrentMemberCount;
-    private int studygroupPendingMemberCount;
+    private int studyGroupId;
+    private int studyGroupCurrentMemberCount;
+    private int studyGroupPendingMemberCount;
+    private int articleDeleteStatus;
     private ReplyDTO replyDTOList;
 
 
     public ArticleDTO() {
     }
 
-    public ArticleDTO(int articleId, String articleTitle, String articleContent, int articleCategory, String articleCreateDate, String articleLastUpdateDate, int articleViewCount, int articleLikeCount, int articleReplyCount, int articleReportStatus, int studygroupMemberMaxCount, String studygroupRecruitmentDeadline, String articleQuestionCategory, int userCode, int studygroupId, int studygroupCurrentMemberCount, int studygroupPendingMemberCount, ReplyDTO replyDTOList) {
+    public ArticleDTO(int articleId, String articleTitle, String articleContent, int articleCategory, String articleCreateDate, String articleLastUpdateDate, int articleViewCount, int articleLikeCount, int articleReplyCount, int articleReportStatus, int studyGroupMemberMaxCount, String studyGroupRecruitmentDeadline, int articleQuestionCategory, int userCode, int studyGroupId, int studyGroupCurrentMemberCount, int studyGroupPendingMemberCount, int articleDeleteStatus, ReplyDTO replyDTOList) {
         this.articleId = articleId;
         this.articleTitle = articleTitle;
         this.articleContent = articleContent;
@@ -38,13 +39,14 @@ public class ArticleDTO {
         this.articleLikeCount = articleLikeCount;
         this.articleReplyCount = articleReplyCount;
         this.articleReportStatus = articleReportStatus;
-        this.studygroupMemberMaxCount = studygroupMemberMaxCount;
-        this.studygroupRecruitmentDeadline = studygroupRecruitmentDeadline;
+        this.studyGroupMemberMaxCount = studyGroupMemberMaxCount;
+        this.studyGroupRecruitmentDeadline = studyGroupRecruitmentDeadline;
         this.articleQuestionCategory = articleQuestionCategory;
         this.userCode = userCode;
-        this.studygroupId = studygroupId;
-        this.studygroupCurrentMemberCount = studygroupCurrentMemberCount;
-        this.studygroupPendingMemberCount = studygroupPendingMemberCount;
+        this.studyGroupId = studyGroupId;
+        this.studyGroupCurrentMemberCount = studyGroupCurrentMemberCount;
+        this.studyGroupPendingMemberCount = studyGroupPendingMemberCount;
+        this.articleDeleteStatus = articleDeleteStatus;
         this.replyDTOList = replyDTOList;
     }
 
@@ -141,31 +143,31 @@ public class ArticleDTO {
         this.articleReportStatus = articleReportStatus;
     }
 
-    public int getStudygroupMemberMaxCount() {
-        return studygroupMemberMaxCount;
+    public int getStudyGroupMemberMaxCount() {
+        return studyGroupMemberMaxCount;
     }
 
-    public void setStudygroupMemberMaxCount(int studygroupMemberMaxCount) {
-        this.studygroupMemberMaxCount = studygroupMemberMaxCount;
+    public void setStudyGroupMemberMaxCount(int studyGroupMemberMaxCount) {
+        this.studyGroupMemberMaxCount = studyGroupMemberMaxCount;
     }
 
-    public String getStudygroupRecruitmentDeadline() {
-        return studygroupRecruitmentDeadline;
+    public String getStudyGroupRecruitmentDeadline() {
+        return studyGroupRecruitmentDeadline;
     }
 
-    public void setStudygroupRecruitmentDeadline(String studygroupRecruitmentDeadline) {
-        this.studygroupRecruitmentDeadline = studygroupRecruitmentDeadline;
+    public void setStudyGroupRecruitmentDeadline(String studyGroupRecruitmentDeadline) {
+        this.studyGroupRecruitmentDeadline = studyGroupRecruitmentDeadline;
     }
 
-    public String getArticleQuestionCategory() {
+    public int getArticleQuestionCategory() {
         return articleQuestionCategory;
     }
 
-    public void setArticleQuestionCategory(String articleQuestionCategory) {
+    public void setArticleQuestionCategory(int articleQuestionCategory) {
         this.articleQuestionCategory = articleQuestionCategory;
     }
 
-    public Integer getUserCode() {
+    public int getUserCode() {
         return userCode;
     }
 
@@ -173,28 +175,36 @@ public class ArticleDTO {
         this.userCode = userCode;
     }
 
-    public int getStudygroupId() {
-        return studygroupId;
+    public int getStudyGroupId() {
+        return studyGroupId;
     }
 
-    public void setStudygroupId(int studygroupId) {
-        this.studygroupId = studygroupId;
+    public void setStudyGroupId(int studyGroupId) {
+        this.studyGroupId = studyGroupId;
     }
 
-    public int getStudygroupCurrentMemberCount() {
-        return studygroupCurrentMemberCount;
+    public int getStudyGroupCurrentMemberCount() {
+        return studyGroupCurrentMemberCount;
     }
 
-    public void setStudygroupCurrentMemberCount(int studygroupCurrentMemberCount) {
-        this.studygroupCurrentMemberCount = studygroupCurrentMemberCount;
+    public void setStudyGroupCurrentMemberCount(int studyGroupCurrentMemberCount) {
+        this.studyGroupCurrentMemberCount = studyGroupCurrentMemberCount;
     }
 
-    public int getStudygroupPendingMemberCount() {
-        return studygroupPendingMemberCount;
+    public int getStudyGroupPendingMemberCount() {
+        return studyGroupPendingMemberCount;
     }
 
-    public void setStudygroupPendingMemberCount(int studygroupPendingMemberCount) {
-        this.studygroupPendingMemberCount = studygroupPendingMemberCount;
+    public void setStudyGroupPendingMemberCount(int studyGroupPendingMemberCount) {
+        this.studyGroupPendingMemberCount = studyGroupPendingMemberCount;
+    }
+
+    public int getArticleDeleteStatus() {
+        return articleDeleteStatus;
+    }
+
+    public void setArticleDeleteStatus(int articleDeleteStatus) {
+        this.articleDeleteStatus = articleDeleteStatus;
     }
 
     @Override
@@ -210,13 +220,14 @@ public class ArticleDTO {
                 ", articleLikeCount=" + articleLikeCount +
                 ", articleReplyCount=" + articleReplyCount +
                 ", articleReportStatus=" + articleReportStatus +
-                ", studygroupMemberMaxCount=" + studygroupMemberMaxCount +
-                ", studygroupRecruitmentDeadline='" + studygroupRecruitmentDeadline + '\'' +
-                ", articleQuestionCategory='" + articleQuestionCategory + '\'' +
+                ", studyGroupMemberMaxCount=" + studyGroupMemberMaxCount +
+                ", studyGroupRecruitmentDeadline='" + studyGroupRecruitmentDeadline + '\'' +
+                ", articleQuestionCategory=" + articleQuestionCategory +
                 ", userCode=" + userCode +
-                ", studygroupId=" + studygroupId +
-                ", studygroupCurrentMemberCount=" + studygroupCurrentMemberCount +
-                ", studygroupPendingMemberCount=" + studygroupPendingMemberCount +
+                ", studyGroupId=" + studyGroupId +
+                ", studyGroupCurrentMemberCount=" + studyGroupCurrentMemberCount +
+                ", studyGroupPendingMemberCount=" + studyGroupPendingMemberCount +
+                ", articleDeleteStatus=" + articleDeleteStatus +
                 ", replyDTOList=" + replyDTOList +
                 '}';
     }
