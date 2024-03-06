@@ -55,8 +55,8 @@ public class UserTest {
     void testFindUserCode(int userCode) {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<UserDTO> user = userService.selectUserCode(userCode);
-                    user.forEach(System.out::println);
+                    UserDTO user = userService.selectUserCode(userCode);
+                    System.out.println("user = " + user);
                 }
         );
     }

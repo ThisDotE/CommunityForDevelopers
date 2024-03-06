@@ -29,7 +29,7 @@ public class UserService {
         return sqlSession.getMapper(UserMapper.class).selectUserId(userId);
     }
 
-    public List<UserDTO> selectUserCode(int userCode) {
+    public UserDTO selectUserCode(int userCode) {
         return sqlSession.getMapper(UserMapper.class).selectUserCode(userCode);
     }
 
