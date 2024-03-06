@@ -5,8 +5,9 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyMapper">
 
-    <resultMap id="reportedReplyResultMap" type="org.thisdote.communityfordevelopers.reported_reply.query.ReportedReplyDTO">
-        <id property="replyId" column="REPLY_ID"/>
+    <resultMap id="reportedReplyResultMap" type="org.thisdote.communityfordevelopers.reported_reply.dto.ReportedReplyDTO">
+        <id property="reportReplyId" column="REPORT_REPLY_ID"/>
+        <result property="replyId" column="REPLY_ID"/>
         <result property="userCode" column="USER_CODE"/>
         <result property="reportDate" column="REPORT_DATE"/>
         <result property="reportContent" column="REPORT_CONTENT"/>
@@ -16,7 +17,8 @@
 
     <select id="selectAllReportedReply" resultMap="reportedReplyResultMap">
         SELECT
-               A.REPLY_ID
+               A.REPORT_REPLY_ID
+             , A.REPLY_ID
              , A.USER_CODE
              , A.REPORT_DATE
              , A.REPORT_CONTENT

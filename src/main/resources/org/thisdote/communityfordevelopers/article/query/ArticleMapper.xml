@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.communityfordevelopers.article.query.ArticleMapper">
 
-    <resultMap id="articleResultMap" type="org.thisdote.communityfordevelopers.article.query.ArticleDTO">
+    <resultMap id="articleResultMap" type="org.thisdote.communityfordevelopers.article.dto.ArticleDTO">
         <id property="articleId" column="USER_CODE"/>
         <result property="articleTitle" column="ARTICLE_TITLE"/>
         <result property="articleContent" column="ARTICLE_CONTENT"/>
@@ -16,13 +16,14 @@
         <result property="articleLikeCount" column="ARTICLE_LIKE_COUNT"/>
         <result property="articleReplyCount" column="ARTICLE_REPLY_COUNT"/>
         <result property="articleReportStatus" column="ARTICLE_REPORT_STATUS"/>
-        <result property="studygroupMemberMaxCount" column="STUDYGROUP_MEMBER_MAX_COUNT"/>
-        <result property="studygroupRecruitmentDeadline" column="STUDYGROUP_RECRUITMENT_DEADLINE"/>
+        <result property="studyGroupMemberMaxCount" column="STUDYGROUP_MEMBER_MAX_COUNT"/>
+        <result property="studyGroupRecruitmentDeadline" column="STUDYGROUP_RECRUITMENT_DEADLINE"/>
         <result property="articleQuestionCategory" column="ARTICLE_QUESTION_CATEGORY"/>
         <result property="userCode" column="USER_CODE"/>
-        <result property="studygroupId" column="STUDYGROUP_ID"/>
-        <result property="studygroupCurrentMemberCount" column="STUDYGROUP_CURRENT_MEMBER_COUNT"/>
-        <result property="studygroupPendingMemberCount" column="STUDYGROUP_PENDING_MEMBER_COUNT"/>
+        <result property="studyGroupId" column="STUDYGROUP_ID"/>
+        <result property="studyGroupCurrentMemberCount" column="STUDYGROUP_CURRENT_MEMBER_COUNT"/>
+        <result property="studyGroupPendingMemberCount" column="STUDYGROUP_PENDING_MEMBER_COUNT"/>
+        <result property="articleDeleteStatus" column="ARTICLE_DELETE_STATUS"/>
     </resultMap>
 
     <select id="selectAllArticle" resultMap="articleResultMap">
@@ -44,6 +45,7 @@
              , A.STUDYGROUP_ID
              , A.STUDYGROUP_CURRENT_MEMBER_COUNT
              , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
           FROM ARTICLE A
     </select>
     <select id="selectAllQuestionArticle" resultMap="articleResultMap">
@@ -81,6 +83,7 @@
              , A.STUDYGROUP_ID
              , A.STUDYGROUP_CURRENT_MEMBER_COUNT
              , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
           FROM ARTICLE A
          WHERE USER_CODE = #{userCode}
     </select>
@@ -104,6 +107,7 @@
              , A.STUDYGROUP_ID
              , A.STUDYGROUP_CURRENT_MEMBER_COUNT
              , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
           FROM ARTICLE A
          WHERE ARTICLE_CATEGORY = #{articleCategory}
     </select>
@@ -129,6 +133,7 @@
              , A.STUDYGROUP_ID
              , A.STUDYGROUP_CURRENT_MEMBER_COUNT
              , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
           FROM ARTICLE A
         <trim prefix="WHERE" prefixOverrides="AND | OR">
             <if test="CATEGORY != null">
@@ -143,8 +148,8 @@
         </trim>
     </select>
 
-    <resultMap id="articleInfoReply" type="org.thisdote.communityfordevelopers.article.query.ArticleDTO" extends="articleResultMap">
-        <association property="replyDTOList" javaType="org.thisdote.communityfordevelopers.reply.query.ReplyDTO">
+    <resultMap id="articleInfoReply" type="org.thisdote.communityfordevelopers.article.dto.ArticleDTO" extends="articleResultMap">
+        <association property="replyDTOList" javaType="org.thisdote.communityfordevelopers.reply.dto.ReplyDTO">
             <id property="replyId" column="reply_id"/>
             <result property="replyReportStatus" column="reply_report_status"/>
             <result property="replyContent" column="reply_content"/>
@@ -169,6 +174,7 @@
              , A.STUDYGROUP_CURRENT_MEMBER_COUNT
              , A.STUDYGROUP_RECRUITMENT_DEADLINE
              , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
              , B.REPLY_ID
              , B.REPLY_CONTENT
              , B.USER_CODE AS REPLY_USER_CODE

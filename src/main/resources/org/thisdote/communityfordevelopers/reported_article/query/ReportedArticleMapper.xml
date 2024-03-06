@@ -6,7 +6,8 @@
 <mapper namespace="org.thisdote.communityfordevelopers.reported_article.query.ReportedArticleMapper">
 
     <resultMap id="reportedArticleResultMap" type="org.thisdote.communityfordevelopers.reported_article.dto.ReportedArticleDTO">
-        <id property="articleId" column="ARTICLE_ID"/>
+        <id property="reportArticleId" column="REPORT_ARTICLE_ID"/>
+        <result property="articleId" column="ARTICLE_ID"/>
         <result property="userCode" column="USER_CODE"/>
         <result property="reportDate" column="REPORT_DATE"/>
         <result property="reportContent" column="REPORT_CONTENT"/>
@@ -16,7 +17,8 @@
 
     <select id="selectAllReportedArticle" resultMap="reportedArticleResultMap">
         SELECT
-               A.ARTICLE_ID
+               A.REPORT_ARTICLE_ID
+             , A.ARTICLE_ID
              , A.USER_CODE
              , A.REPORT_DATE
              , A.REPORT_CONTENT

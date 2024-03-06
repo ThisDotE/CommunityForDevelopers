@@ -68,8 +68,10 @@ class UserCommandServiceTests {
 
         userCommandService.modifyUser(modifyUser);
 
-        List<UserDTO> user = userService.selectUserCode(userCode);
-
+        Assertions.assertDoesNotThrow(() -> {
+            UserDTO user = userService.selectUserCode(userCode);
+            System.out.println("user = " + user);
+        });
     }
 
     @DisplayName("회원 삭제 테스트")
@@ -77,5 +79,10 @@ class UserCommandServiceTests {
     @ValueSource(ints = 20)
     void testDeleteUser(int userCode) {
         userCommandService.deleteUser(userCode);
+
+        Assertions.assertDoesNotThrow(() -> {
+            UserDTO user = userService.selectUserCode(userCode);
+            System.out.println("user = " + user);
+        });
     }
 }

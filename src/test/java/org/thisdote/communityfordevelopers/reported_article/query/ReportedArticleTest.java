@@ -17,11 +17,11 @@ public class ReportedArticleTest {
 
     @DisplayName("Reported Article Test")
     @Test
-    void testFindAllMenus() {
+    void testFindAllReportedArticle() {
         Assertions.assertDoesNotThrow(
                 () -> {
-                    List<ReportedArticleDTO> menus = reportedArticleService.selectAllReportedArticle();
-                    menus.forEach(System.out::println);
+                    List<ReportedArticleDTO> reportedArticles = reportedArticleService.selectAllReportedArticle();
+                    reportedArticles.forEach(System.out::println);
                 }
         );
     }
