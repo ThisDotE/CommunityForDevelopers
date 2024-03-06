@@ -23,8 +23,15 @@ public class ArticleService1 {
     }
 
     @Transactional
-    public void modifyArticle(ArticleDTO articleDTO, int articleId) {
+    public void deleteArticle(ArticleDTO articleDTO, int articleId) {
         ArticleEntity article = articleRepository.findById(articleId).get();
+        ArticleDTO modifyDTO = mapper.map(article, ArticleDTO.class);
+
         article.setArticleDeleteStatus(articleDTO.getArticleDeleteStatus());
+    }
+
+    @Transactional
+    public void modifyArticle(ArticleDTO articleDTO) {
+        articleRepository.save(mapper.map(articleDTO, ArticleEntity.class));
     }
 }
