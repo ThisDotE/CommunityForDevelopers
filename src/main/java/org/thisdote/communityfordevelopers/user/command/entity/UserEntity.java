@@ -17,7 +17,7 @@ public class UserEntity {
     @Id
     @Column(name = "user_code")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userCode;
+    private Integer userCode;
 
     @Column(name = "user_id")
     private String userId;
@@ -35,7 +35,7 @@ public class UserEntity {
     private String userEmail;
 
     @Column(name = "user_studygroup_status")
-    private int userStudyGroupStatus;
+    private Integer userStudyGroupStatus;
 
     @Column(name = "user_regist_date")
     private Date userRegistDate;
@@ -44,11 +44,9 @@ public class UserEntity {
     private Date userInfoUpdateDate;
 
     @Column(name = "user_grade")
-    private int userGrade;
+    private Integer userGrade;
 
     @Column(name = "user_resign_status")
-    private int userResignStatus;
-
-//    private StudyGroupMemberDTO studyGroupMemberDTO;
+    private Integer userResignStatus;
 
 }
