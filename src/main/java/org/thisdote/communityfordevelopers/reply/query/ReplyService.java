@@ -17,6 +17,11 @@ public class ReplyService {
         this.sqlSession = sqlSession;
     }
 
+
+    public ReplyDTO selectReplyId(int replyId) {
+        return sqlSession.getMapper(ReplyMapper.class).selectReplyId(replyId);
+    }
+
     public List<ReplyDTO> findAllReply() {
         return sqlSession.getMapper(ReplyMapper.class).selectAllReply();
     }

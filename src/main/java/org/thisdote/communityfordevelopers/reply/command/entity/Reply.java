@@ -2,7 +2,6 @@ package org.thisdote.communityfordevelopers.reply.command.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 
 import java.util.Date;
 
@@ -18,10 +17,10 @@ public class Reply {
     @Id
     @Column(name = "reply_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int replyId;
+    private Integer replyId;
 
     @Column(name = "reply_report_status")
-    private int replyReportStatus;
+    private Integer replyReportStatus;
 
     @Column(name = "reply_content")
     private String replyContent;
@@ -33,14 +32,14 @@ public class Reply {
     private Date replyLastUpdateDate;
 
     @Column(name = "reply_like_count")
-    private int replyLikeCount;
-
-    @Column(name = "user_code")
-    private int userCode;
-
-    @Column(name = "artcle_id")
-    private int articleId;
+    private Integer replyLikeCount;
 
     @Column(name = "reply_delete_status")
-    private int replyDeleteStatus;
+    private Integer replyDeleteStatus;
+
+    @Column(name = "user_code")
+    private Integer userCode;
+
+    @Column(name = "article_id")
+    private Integer articleId;
 }
