@@ -15,19 +15,19 @@ public class StudyGroupEntity {
     @Id
     @Column(name="studygroup_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int studygroupId;
+    private Integer studygroupId;
 
     @Column(name="studygroup_type")
-    private int studygroupType;
+    private Integer studygroupType;
 
     @Column(name="studygroup_create_date")
     private java.util.Date studygroupCreateDate;
 
     @Column(name="studygroup_member_count")
-    private int studygroupMemberCount;
+    private Integer studygroupMemberCount;
 
     @Column(name="studygroup_activation_status")
-    private int studygroupActivationStatus;
+    private Integer studygroupActivationStatus;
 
     @Column(name="studygroup_study_time")
     private java.util.Date studygroupStudyTime;
@@ -36,5 +36,5 @@ public class StudyGroupEntity {
     private String studygroupContent;
 
     @Column(name="studygroup_delete_status")
-    private int studygroupDeleteStatus;
+    private Integer studygroupDeleteStatus;
 }

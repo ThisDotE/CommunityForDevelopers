@@ -38,7 +38,7 @@ public class StudyGroupCommandTests {
     public void testModifyStudyGroup() {
         StudyGroupCommandDTO studygroupCommandDTO = new StudyGroupCommandDTO();
 
-        studygroupCommandDTO.setStudygroupId(4);
+        studygroupCommandDTO.setStudygroupId(1);
         studygroupCommandDTO.setStudygroupType(1);
         studygroupCommandDTO.setStudygroupCreateDate(new Date());
         studygroupCommandDTO.setStudygroupMemberCount(30);
@@ -52,18 +52,13 @@ public class StudyGroupCommandTests {
 
     @DisplayName("StudyGroup Delete Test")
     @ParameterizedTest
-    @ValueSource(ints = 3)
-    void testDeleteStudyGroup() {
-        studygroupCommandService.deleteStudygroup();
+    @ValueSource(ints = 5)
+    void testDeleteStudyGroup(int studygroupId) {
+        int deleteStatus = 1;
+
+        StudyGroupCommandDTO studyGroupCommandDTO = new StudyGroupCommandDTO();
+        studyGroupCommandDTO.setStudygroupDeleteStatus(1);
+
+        studygroupCommandService.deleteStudyGroup(studyGroupCommandDTO, studygroupId);
     }
-//    @ParameterizedTest
-//    @ValueSource(ints = 3)
-//    public void 게시글_삭제(int articleId){
-//        int deleteStatus = 0;
-//
-//        ArticleDTO articleDTO = new ArticleDTO();
-//        articleDTO.setArticleDeleteStatus(0);
-//
-//        articleService1.modifyArticle(articleDTO, articleId);
-//    }
 }

@@ -28,9 +28,9 @@ public class StudyGroupCommandService {
     }
 
     @Transactional
-    public void deleteStudygroup() {
-        StudyGroupCommandDTO studyGroupCommandDTO = new StudyGroupCommandDTO();
-        studyGroupCommandDTO.setStudygroupDeleteStatus(1);
+    public void deleteStudyGroup(StudyGroupCommandDTO studyGroupDTO, int studygroupId) {
+        StudyGroupEntity studygroup = studygroupRepository.findById(studygroupId).get();
+        studygroup.setStudygroupDeleteStatus(studyGroupDTO.getStudygroupDeleteStatus());
     }
 
     @Transactional

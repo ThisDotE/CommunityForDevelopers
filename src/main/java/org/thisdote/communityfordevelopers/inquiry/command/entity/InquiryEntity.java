@@ -16,10 +16,10 @@ public class InquiryEntity {
     @Id
     @Column(name="inquiry_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int inquiryId;
+    private Integer inquiryId;
 
     @Column(name="inquiry_category")
-    private int inquiryCategory;
+    private Integer inquiryCategory;
 
     @Column(name="inquiry_title")
     private String inquiryTitle;
@@ -34,9 +34,9 @@ public class InquiryEntity {
     private java.util.Date inquiryLastUpdateDate;
 
     @Column(name="inquiry_status")
-    private int inquiryStatus;
+    private Integer inquiryStatus;
 
     @Column(name="user_code")
-    private int userCode;
+    private Integer userCode;
 
 }
