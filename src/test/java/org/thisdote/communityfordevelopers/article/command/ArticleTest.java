@@ -39,17 +39,17 @@ public class ArticleTest {
         article.setStudygroupId(5);
         article.setStudygroupCurrentMemberCount(17);
         article.setStudygroupPendingMemberCount(6);
-
+        article.setArticleDeleteStatus(1);
         articleService1.registArticle(article);
     }
 
     @ParameterizedTest
     @ValueSource(ints = 3)
-    public void 게시글_내용_수정(int articleId){
-        String modifyContent = "진짜 아오 이게 왜 삭제 돼?";
+    public void 게시글_삭제(int articleId){
+        int deleteStatus = 0;
 
         ArticleDTO articleDTO = new ArticleDTO();
-        articleDTO.setArticleContent(modifyContent);
+        articleDTO.setArticleDeleteStatus(0);
 
         articleService1.modifyArticle(articleDTO, articleId);
     }

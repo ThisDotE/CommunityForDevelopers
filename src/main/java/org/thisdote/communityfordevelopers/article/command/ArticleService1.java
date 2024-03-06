@@ -25,6 +25,6 @@ public class ArticleService1 {
     @Transactional
     public void modifyArticle(ArticleDTO articleDTO, int articleId) {
         ArticleEntity article = articleRepository.findById(articleId).get();
-        article.setArticleContent(articleDTO.getArticleContent());
+        article.setArticleDeleteStatus(articleDTO.getArticleDeleteStatus());
     }
 }
