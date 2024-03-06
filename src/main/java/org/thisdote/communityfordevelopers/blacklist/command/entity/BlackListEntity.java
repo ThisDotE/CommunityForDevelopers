@@ -9,21 +9,21 @@ public class BlackListEntity {
     @Id
     @Column(name = "blacklist_id")
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int blackListId;
+    private Integer blackListId;
 
     @Column(name = "blacklist_status")
-    private int blackListStatus;
+    private Integer blackListStatus;
 
     @Column(name = "user_code")
-    private int userCode;
+    private Integer userCode;
 
     @Column(name = "blacklist_count")
-    private int blackListCount;
+    private Integer blackListCount;
 
     public BlackListEntity() {
     }
 
-    public BlackListEntity(int blackListId, int blackListStatus, int userCode, int blackListCount) {
+    public BlackListEntity(Integer blackListId, Integer blackListStatus, Integer userCode, Integer blackListCount) {
         this.blackListId = blackListId;
         this.blackListStatus = blackListStatus;
         this.userCode = userCode;

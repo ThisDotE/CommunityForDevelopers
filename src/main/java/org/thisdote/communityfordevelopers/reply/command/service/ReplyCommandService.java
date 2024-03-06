@@ -19,14 +19,25 @@ public class ReplyCommandService {
         this.replyRepository = replyRepository;
     }
 
-    /* 설명. 댓글 등록 save (insert) */
+    /* 설명. 댓글 등록 regist */
     @Transactional
     public void registReply(ReplyDTO newReply) {
         replyRepository.save(modelMapper.map(newReply, Reply.class));
     }
 
-//    @Transactional
-//    public void modifyReply(ReplyDTO newReply) {
-//        replyRepository.
-//    }
+    /* 설명. 댓글 수정 modify */
+    @Transactional
+    public void modifyReply(int replyId) {
+        Reply foundReply = replyRepository.findById(replyId).orElseThrow(IllegalArgumentException::new);
+        foundReply.setReplyId(replyId);
+    }
+
+    /* 설명. 댓글 삭제 delete */
+    @Transactional
+    public void deleteReply(int replyId) {
+        Reply foundReply = replyRepository.findById(replyId).orElseThrow(IllegalArgumentException::new);
+
+        foundReply.setReplyDeleteStatus(0);         // 0일 때 댓글 삭제됨
+//        foundReply.setReplyDeleteStatus(1);         // 1일 때 댓글 유지됨
+    }
 }
